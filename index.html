@@ -1,0 +1,1481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="author" content="Chova Lal Suhagpure — MeriKashti.ai">
+<meta name="copyright" content="© 2025 Meri Kashti. All Rights Reserved. Unauthorized use prohibited.">
+<meta name="robots" content="noindex,nofollow,noarchive,nocache">
+<meta name="description" content="Meri Kashti — India's AI Life Partner Platform. Proprietary software.">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<title>Meri Kashti — Your AI Life Partner</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600;700&display=swap');
+:root{--bg:#060610;--surf:#0D0D1C;--card:#131325;--bdr:rgba(255,255,255,.07);--gold:#F59E0B;--gold2:#FCD34D;--gbg:rgba(245,158,11,.1);--rose:#F43F5E;--vio:#8B5CF6;--em:#10B981;--txt:#F8FAFC;--sub:#94A3B8;--dim:#475569}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--txt);min-height:100vh;overflow-x:hidden}
+.scr{display:none;min-height:100vh}.scr.on{display:block}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:.8rem 1.5rem;display:none;align-items:center;justify-content:space-between;background:rgba(6,6,16,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--bdr)}
+.nlogo{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:900;background:linear-gradient(135deg,var(--gold),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;cursor:pointer}
+.ncta{display:flex;gap:.6rem}
+.bgh{padding:.4rem 1rem;border:1px solid var(--bdr);border-radius:8px;background:transparent;color:var(--sub);font-size:.8rem;font-weight:500;cursor:pointer}.bgh:hover{border-color:var(--gold);color:var(--gold)}
+.bgld{padding:.4rem 1rem;border-radius:8px;background:var(--gold);color:#000;font-size:.8rem;font-weight:700;border:none;cursor:pointer}.bgld:hover{background:var(--gold2)}
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:9rem 1.5rem 5rem;position:relative;overflow:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none}
+.hero-badge{display:inline-flex;align-items:center;gap:.4rem;background:var(--gbg);border:1px solid rgba(245,158,11,.25);border-radius:100px;padding:.3rem .85rem;font-size:.75rem;color:var(--gold);font-weight:600;margin-bottom:1.5rem}
+.dot{width:6px;height:6px;background:var(--gold);border-radius:50%;animation:pulse 2s infinite}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,6vw,4.5rem);font-weight:900;line-height:1.1;margin-bottom:1.3rem}
+.grad{background:linear-gradient(135deg,var(--gold),var(--gold2),var(--rose));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero-sub{font-size:1rem;color:var(--sub);max-width:520px;margin:0 auto 2rem;line-height:1.75}
+.hero-btns{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap}
+.bp{padding:.8rem 2rem;background:linear-gradient(135deg,var(--gold),#D97706);color:#000;font-weight:700;font-size:.95rem;border:none;border-radius:11px;cursor:pointer;transition:all .3s}.bp:hover{transform:translateY(-2px)}
+.bo{padding:.8rem 2rem;background:transparent;color:var(--txt);font-weight:600;font-size:.95rem;border:1px solid var(--bdr);border-radius:11px;cursor:pointer;transition:all .3s}.bo:hover{border-color:var(--gold);color:var(--gold)}
+/* STATS BAND */
+.tband{padding:1.4rem 1.5rem;background:var(--surf);border-top:1px solid var(--bdr);border-bottom:1px solid var(--bdr)}
+.titems{max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem;text-align:center}
+.titem h3{font-size:1.6rem;font-weight:800;background:linear-gradient(135deg,var(--gold),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.titem p{font-size:.72rem;color:var(--dim);margin-top:.15rem}
+/* TOOLS SECTION */
+.sec{padding:4.5rem 1.5rem;overflow:hidden}
+.sec-lbl{text-align:center;font-size:.68rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem}
+.sec-h{text-align:center;font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:700;margin-bottom:.7rem}
+.sec-p{text-align:center;color:var(--sub);max-width:480px;margin:0 auto 2.5rem;line-height:1.75;font-size:.9rem}
+.tgrid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem}
+.tc{background:var(--card);border:1px solid var(--bdr);border-radius:18px;padding:1.5rem;cursor:pointer;position:relative;overflow:hidden;transition:all .3s}
+.tc::before{content:'';position:absolute;inset:0;opacity:0;transition:opacity .3s;border-radius:18px}
+.tc:hover{transform:translateY(-5px)}.tc:hover::before{opacity:1}
+.tc-hl::before{background:radial-gradient(circle at 50% 0%,rgba(56,189,248,.12),transparent 68%)}
+.tc-pi::before{background:radial-gradient(circle at 50% 0%,rgba(139,92,246,.12),transparent 68%)}
+.tc-ru::before{background:radial-gradient(circle at 50% 0%,rgba(16,185,129,.12),transparent 68%)}
+.tc-lm::before{background:radial-gradient(circle at 50% 0%,rgba(244,63,94,.12),transparent 68%)}
+.tc-ss::before{background:radial-gradient(circle at 50% 0%,rgba(100,100,100,.08),transparent 68%)}
+.tico{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:1rem}
+.ic-hl{background:rgba(56,189,248,.15)}.ic-pi{background:rgba(139,92,246,.15)}.ic-ru{background:rgba(16,185,129,.15)}.ic-lm{background:rgba(244,63,94,.15)}.ic-ss{background:rgba(100,100,100,.12)}
+.tc h3{font-size:.97rem;font-weight:700;margin-bottom:.35rem}.tc p{font-size:.78rem;color:var(--sub);line-height:1.6;margin-bottom:.8rem}
+.ttag{display:inline-block;padding:.18rem .65rem;border-radius:100px;font-size:.65rem;font-weight:600}
+.tg-hl{background:rgba(56,189,248,.1);color:#38BDF8}.tg-pi{background:rgba(139,92,246,.1);color:var(--vio)}.tg-ru{background:rgba(16,185,129,.1);color:var(--em)}.tg-lm{background:rgba(244,63,94,.1);color:var(--rose)}.tg-ss{background:rgba(100,100,100,.1);color:#888}
+/* AUTH */
+.auth-wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:2rem}
+.acard{background:var(--card);border:1px solid var(--bdr);border-radius:22px;padding:2.4rem;width:100%;max-width:400px}
+.alogo{text-align:center;font-family:'Playfair Display',serif;font-size:1.7rem;font-weight:900;background:linear-gradient(135deg,var(--gold),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:.3rem}
+.asub{text-align:center;font-size:.78rem;color:var(--dim);margin-bottom:1.5rem}
+.atabs{display:flex;background:var(--surf);border-radius:9px;padding:3px;margin-bottom:1.5rem}
+.atab{flex:1;padding:.5rem;border:none;background:transparent;border-radius:7px;font-size:.78rem;font-weight:600;color:var(--dim);cursor:pointer;transition:all .2s}.atab.on{background:var(--gold);color:#000}
+.fg{margin-bottom:.9rem}.fg label{display:block;font-size:.72rem;font-weight:600;color:var(--sub);margin-bottom:.3rem}
+.fg input{width:100%;padding:.6rem .8rem;background:var(--surf);border:1px solid var(--bdr);border-radius:8px;color:var(--txt);font-size:.83rem;outline:none;font-family:'Inter',sans-serif}.fg input:focus{border-color:var(--gold)}.fg input::placeholder{color:var(--dim)}
+.abtn{width:100%;padding:.75rem;background:linear-gradient(135deg,var(--gold),#D97706);color:#000;font-weight:700;font-size:.88rem;border:none;border-radius:9px;cursor:pointer;margin-top:.3rem;font-family:'Inter',sans-serif}
+/* DASHBOARD */
+.dlayout{display:flex;min-height:100vh}
+.sb{width:230px;min-height:100vh;background:var(--surf);border-right:1px solid var(--bdr);padding:1.2rem;position:fixed;top:0;left:0;bottom:0;display:flex;flex-direction:column;z-index:50;overflow-y:auto}
+.sblogo{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:900;background:linear-gradient(135deg,var(--gold),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid var(--bdr);cursor:pointer}
+.sblbl{font-size:.63rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin:.9rem 0 .4rem}
+.sbi{display:flex;align-items:center;gap:.6rem;padding:.48rem .6rem;border-radius:8px;font-size:.77rem;font-weight:500;color:var(--sub);cursor:pointer;transition:all .2s;margin-bottom:2px;border:none;background:transparent;width:100%;text-align:left}.sbi:hover{background:var(--card);color:var(--txt)}.sbi.on{background:var(--gbg);color:var(--gold)}
+.si{font-size:.85rem;width:16px;text-align:center}
+.sbbot{margin-top:auto;padding-top:.8rem;border-top:1px solid var(--bdr)}
+.sbusr{display:flex;align-items:center;gap:.6rem;padding:.3rem}
+.uav{width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--gold),#D97706);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.7rem;color:#000;flex-shrink:0}
+.ui h4{font-size:.72rem;font-weight:600}.ui span{font-size:.62rem;color:var(--dim)}
+.dmain{margin-left:230px;padding:1.5rem;min-height:100vh}
+.dash-hero{background:linear-gradient(135deg,rgba(245,158,11,.1),rgba(139,92,246,.06));border:1px solid rgba(245,158,11,.18);border-radius:20px;padding:1.5rem 2rem;margin-bottom:1.2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.8rem}
+.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem;margin-bottom:1.2rem}
+.stat-card{border-radius:14px;padding:1.1rem;transition:transform .3s}.stat-card:hover{transform:translateY(-3px)}
+.s1{background:linear-gradient(135deg,rgba(245,158,11,.15),rgba(249,115,22,.06));border:1px solid rgba(245,158,11,.22)}
+.s2{background:linear-gradient(135deg,rgba(16,185,129,.15),rgba(20,184,166,.06));border:1px solid rgba(16,185,129,.22)}
+.s3{background:linear-gradient(135deg,rgba(139,92,246,.15),rgba(99,102,241,.06));border:1px solid rgba(139,92,246,.22)}
+.s4{background:linear-gradient(135deg,rgba(244,63,94,.12),rgba(220,38,38,.05));border:1px solid rgba(244,63,94,.18)}
+.stat-icon{font-size:1.4rem;margin-bottom:.4rem}.stat-val{font-size:1.6rem;font-weight:900;line-height:1}
+.s1 .stat-val{color:#F59E0B}.s2 .stat-val{color:#10B981}.s3 .stat-val{color:#8B5CF6}.s4 .stat-val{color:#F43F5E}
+.stat-lbl{font-size:.65rem;color:var(--sub);margin-top:.2rem;font-weight:500}
+.tools-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin-bottom:1.2rem}
+.tl{border-radius:14px;padding:1.2rem;cursor:pointer;transition:all .3s;text-align:center}.tl:hover{transform:translateY(-4px)}
+.tl1{background:linear-gradient(135deg,rgba(16,185,129,.13),rgba(16,185,129,.04));border:1px solid rgba(16,185,129,.28)}
+.tl2{background:linear-gradient(135deg,rgba(139,92,246,.13),rgba(139,92,246,.04));border:1px solid rgba(139,92,246,.28)}
+.tl3{background:linear-gradient(135deg,rgba(244,63,94,.13),rgba(244,63,94,.04));border:1px solid rgba(244,63,94,.28)}
+.tl4{background:linear-gradient(135deg,rgba(56,189,248,.13),rgba(56,189,248,.04));border:1px solid rgba(56,189,248,.28)}
+.tl5-locked{background:linear-gradient(135deg,rgba(60,60,80,.1),rgba(40,40,60,.05));border:1px dashed rgba(255,255,255,.1);cursor:default;opacity:.7}
+.tl6{background:linear-gradient(135deg,rgba(245,158,11,.13),rgba(245,158,11,.04));border:1px solid rgba(245,158,11,.28)}
+.tl-emoji{font-size:2rem;margin-bottom:.5rem;display:block}
+.tl h3{font-size:.8rem;font-weight:800;margin-bottom:.18rem}.tl p{font-size:.65rem;color:var(--sub);margin-bottom:.5rem}
+.tl-btn{display:inline-block;padding:.24rem .8rem;border-radius:20px;font-size:.63rem;font-weight:700}
+.tl1 .tl-btn{background:rgba(16,185,129,.18);color:#10B981}.tl2 .tl-btn{background:rgba(139,92,246,.18);color:#8B5CF6}.tl3 .tl-btn{background:rgba(244,63,94,.18);color:#F43F5E}.tl4 .tl-btn{background:rgba(56,189,248,.18);color:#38BDF8}.tl6 .tl-btn{background:rgba(245,158,11,.18);color:#F59E0B}
+.dash-bot{display:grid;grid-template-columns:1.2fr .8fr;gap:1rem}
+.d-card{background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:1.2rem}
+.d-card h3{font-size:.84rem;font-weight:700;margin-bottom:.8rem}
+.acti{display:flex;align-items:center;gap:.65rem;padding:.5rem 0;border-bottom:1px solid rgba(255,255,255,.04)}
+.a-ball{width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0}
+.a-tx h4{font-size:.72rem;font-weight:600;margin-bottom:1px}.a-tx span{font-size:.62rem;color:var(--dim)}
+.prog-item{margin-bottom:.85rem}.prog-top{display:flex;justify-content:space-between;font-size:.7rem;margin-bottom:.3rem}.prog-top span:last-child{font-weight:700;color:var(--gold)}
+.prog-bar{height:5px;background:rgba(255,255,255,.06);border-radius:3px;overflow:hidden}.prog-fill{height:100%;border-radius:3px}
+/* TOOL SCREENS */
+.tscr{margin-left:230px;min-height:100vh;display:flex;flex-direction:column}
+.tscr-hdr{position:sticky;top:0;z-index:100;padding:.65rem 1.2rem;background:rgba(6,6,16,.97);border-bottom:1px solid var(--bdr);display:flex;align-items:center;gap:.8rem;backdrop-filter:blur(20px)}
+.bkbtn{padding:.35rem .8rem;border:1px solid var(--bdr);border-radius:6px;background:transparent;color:var(--sub);cursor:pointer;font-size:.7rem;font-family:'Inter',sans-serif}.bkbtn:hover{border-color:var(--gold);color:var(--gold)}
+.tscr-body{flex:1;overflow-y:auto;padding:1.2rem}
+.panel-box{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:13px;padding:1.1rem;margin-bottom:.85rem}
+.panel-box h3{font-size:.9rem;font-weight:700;margin-bottom:.75rem}
+.feat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.8rem;margin-top:.8rem}
+.feat-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:13px;padding:1.05rem;cursor:pointer;transition:all .22s}
+.feat-card:hover{transform:translateY(-3px);background:rgba(255,255,255,.07)}
+.feat-ic{font-size:1.7rem;margin-bottom:.6rem;display:block}
+.feat-title{font-size:13px;font-weight:700;margin-bottom:.28rem}
+.feat-desc{font-size:11px;color:rgba(240,244,255,.48);line-height:1.55;margin-bottom:.7rem}
+.mk-inp{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:8px 11px;color:#f0f4ff;font-size:12.5px;outline:none;font-family:'Inter',sans-serif;margin-bottom:6px}
+.mk-inp:focus{border-color:rgba(245,158,11,.5)}.mk-inp::placeholder{color:rgba(240,244,255,.3)}
+select.mk-inp{cursor:pointer}
+.run-btn{width:100%;padding:9px;border:none;border-radius:8px;font-weight:700;font-size:12.5px;cursor:pointer;transition:all .15s;font-family:'Inter',sans-serif;margin-top:3px}.run-btn:hover{transform:translateY(-1px)}.run-btn:disabled{opacity:.5;cursor:not-allowed;transform:none}
+.ai-result{background:rgba(245,158,11,.04);border:1px solid rgba(245,158,11,.1);border-radius:11px;padding:.85rem;margin-top:.7rem;display:none}
+.ai-result.show{display:block}
+.ai-bub{font-size:12.5px;line-height:1.75;white-space:pre-wrap;color:#f0f4ff}
+/* STOCKSENSE LOCKED */
+.ss-locked-screen{min-height:70vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem}
+.ss-lock-icon{font-size:4rem;margin-bottom:1rem;animation:lockPulse 3s ease-in-out infinite}
+@keyframes lockPulse{0%,100%{transform:scale(1);opacity:.8}50%{transform:scale(1.05);opacity:1}}
+.ss-counter-ring{width:140px;height:140px;border-radius:50%;border:3px solid rgba(255,255,255,.08);display:flex;flex-direction:column;align-items:center;justify-content:center;margin:1.5rem auto;position:relative;background:rgba(255,255,255,.03)}
+.ss-counter-ring::before{content:'';position:absolute;inset:-3px;border-radius:50%;border:3px solid transparent;border-top-color:var(--gold);animation:spin 3s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.ss-count-num{font-size:2rem;font-weight:900;color:var(--gold);line-height:1}
+.ss-count-lbl{font-size:.65rem;color:var(--sub);margin-top:.2rem}
+.ss-prog-wrap{width:100%;max-width:340px;margin:.8rem auto}
+.ss-prog-bar{height:8px;background:rgba(255,255,255,.07);border-radius:4px;overflow:hidden}
+.ss-prog-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold2));border-radius:4px;transition:width 1s ease}
+/* CHAT */
+#mk-chat-ov{position:fixed;top:0;right:0;bottom:0;width:min(400px,100vw);background:#0a0a18;border-left:1px solid rgba(255,255,255,.1);display:flex;flex-direction:column;z-index:999;transform:translateX(100%);transition:transform .32s cubic-bezier(.4,0,.2,1)}
+#mk-chat-ov.open{transform:translateX(0)}
+#mk-chat-hdr{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,.08);display:flex;align-items:center;gap:8px;background:rgba(6,6,16,.97);flex-shrink:0}
+#mk-chat-msgs{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:11px}
+#mk-chat-msgs::-webkit-scrollbar{width:3px}#mk-chat-msgs::-webkit-scrollbar-thumb{background:rgba(255,255,255,.1)}
+.mk-row{display:flex;gap:8px}.mk-row.usr{flex-direction:row-reverse}
+.mk-av{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;flex-shrink:0;margin-top:2px}
+.mk-av.ai{background:rgba(245,158,11,.13);border:1px solid rgba(245,158,11,.2)}.mk-av.usr{background:linear-gradient(135deg,#8B5CF6,#6D28D9);font-size:.65rem;font-weight:700;color:#fff}
+.mk-bub{max-width:83%;padding:9px 13px;border-radius:13px;font-size:12.5px;line-height:1.72;word-break:break-word;white-space:pre-wrap}
+.mk-bub.ai{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.08);color:#f0f4ff;border-radius:4px 13px 13px 13px}
+.mk-bub.usr{background:linear-gradient(135deg,#F59E0B,#D97706);color:#000;font-weight:500;border-radius:13px 4px 13px 13px}
+.mk-dots{display:flex;gap:3px;align-items:center;padding:10px 13px;background:rgba(255,255,255,.07);border-radius:4px 13px 13px 13px}
+.mk-dots span{width:5px;height:5px;border-radius:50%;background:#f59e0b;display:inline-block}
+.mk-dots span:nth-child(1){animation:pulse 1s 0s infinite}.mk-dots span:nth-child(2){animation:pulse 1s .2s infinite}.mk-dots span:nth-child(3){animation:pulse 1s .4s infinite}
+#mk-inp-area{border-top:1px solid rgba(255,255,255,.08);padding:10px;background:rgba(6,6,16,.98);flex-shrink:0}
+#mk-inp-row{display:flex;gap:6px;align-items:flex-end;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:5px 7px 5px 12px}
+#mk-inp-row:focus-within{border-color:rgba(245,158,11,.4)}
+#mk-ta{flex:1;background:none;border:none;outline:none;color:#f0f4ff;font-size:12.5px;font-family:'Inter',sans-serif;resize:none;max-height:100px;min-height:18px;line-height:1.6;padding:3px 0}
+#mk-ta::placeholder{color:rgba(240,244,255,.3)}
+#mk-send{background:linear-gradient(135deg,#F59E0B,#D97706);border:none;width:32px;height:32px;border-radius:7px;cursor:pointer;color:#000;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px}
+#mk-send:hover{transform:scale(1.06)}
+#mk-ov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:996}
+#mk-ov.open{display:block}
+/* FEEDBACK */
+#mk-fb-modal{position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:9999;display:none;align-items:center;justify-content:center;padding:18px}
+#mk-fb-modal.open{display:flex}
+.fb-card{background:linear-gradient(160deg,#0e0e2a,#0a0a1a);border:1px solid rgba(245,158,11,.28);border-radius:20px;padding:1.6rem;max-width:350px;width:100%}
+.fb-star{font-size:1.4rem;cursor:pointer;transition:transform .13s;display:inline-block;padding:0 2px}.fb-star:hover,.fb-star.sel{transform:scale(1.28)}
+.fb-ta{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:8px 11px;color:#f0f4ff;font-size:12px;outline:none;font-family:'Inter',sans-serif;resize:none;min-height:68px;margin-top:8px}
+.fb-cat{padding:3px 9px;border:1px solid rgba(255,255,255,.1);border-radius:20px;background:transparent;color:rgba(240,244,255,.48);font-size:10px;cursor:pointer;font-family:'Inter',sans-serif;transition:all .13s}
+.fb-cat.on{background:rgba(245,158,11,.13);color:#F59E0B;border-color:rgba(245,158,11,.35)}
+/* SECURITY & KYC */
+.kyc-step{display:none}.kyc-step.on{display:block}
+.kyc-prog{display:flex;gap:0;margin-bottom:1.4rem}
+.kyc-dot{flex:1;height:3px;background:rgba(255,255,255,.1);position:relative}
+.kyc-dot.done{background:var(--gold)}.kyc-dot.active{background:linear-gradient(90deg,var(--gold),rgba(245,158,11,.3))}
+.kyc-dot-circle{width:20px;height:20px;border-radius:50%;background:rgba(255,255,255,.1);border:2px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;font-size:9px;position:absolute;top:-8px;left:50%;transform:translateX(-50%);z-index:1;font-weight:700}
+.kyc-dot.done .kyc-dot-circle{background:var(--gold);border-color:var(--gold);color:#000}
+.kyc-dot.active .kyc-dot-circle{background:#0a0a18;border-color:var(--gold);color:var(--gold)}
+.sec-badge{display:inline-flex;align-items:center;gap:.3rem;padding:.2rem .6rem;border-radius:20px;font-size:.65rem;font-weight:700}
+.sec-green{background:rgba(16,185,129,.1);color:#10B981;border:1px solid rgba(16,185,129,.2)}
+.sec-red{background:rgba(244,63,94,.1);color:#F43F5E;border:1px solid rgba(244,63,94,.2)}
+.sec-gold{background:rgba(245,158,11,.1);color:#F59E0B;border:1px solid rgba(245,158,11,.2)}
+.otp-boxes{display:flex;gap:8px;justify-content:center;margin:1rem 0}
+.otp-box{width:42px;height:48px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);border-radius:9px;color:#f0f4ff;font-size:1.3rem;font-weight:700;text-align:center;outline:none;font-family:'Inter',sans-serif;transition:border-color .2s}
+.otp-box:focus{border-color:var(--gold)}
+.strength-bar{height:4px;border-radius:2px;margin-top:4px;transition:all .3s;background:rgba(255,255,255,.08)}
+.strength-fill{height:100%;border-radius:2px;transition:all .3s}
+.lock-alert{background:rgba(244,63,94,.08);border:1px solid rgba(244,63,94,.2);border-radius:9px;padding:10px 13px;font-size:11.5px;color:#f87171;margin-bottom:10px;display:none}
+.lock-alert.show{display:block}
+/* COPYRIGHT PROTECTION */
+::selection{background:rgba(245,158,11,.15);color:var(--txt)}
+.no-select{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+#cr-footer-strip{text-align:center;padding:8px;background:rgba(6,6,16,.9);font-size:.6rem;color:rgba(255,255,255,.25);letter-spacing:.08em;border-top:1px solid rgba(255,255,255,.05);position:relative;z-index:10}
+/* MISC */
+#mkFAB{position:fixed;bottom:20px;right:20px;z-index:400;background:linear-gradient(135deg,#F59E0B,#D97706);color:#000;border:none;border-radius:50px;padding:.55rem 1.2rem;font-size:.8rem;font-weight:800;cursor:pointer;box-shadow:0 4px 22px rgba(245,158,11,.42);display:none;align-items:center;gap:.4rem;font-family:'Inter',sans-serif}
+#gToast{position:fixed;bottom:80px;left:50%;transform:translateX(-50%);z-index:9999;pointer-events:none}
+#dpdpBar{position:fixed;bottom:70px;left:1rem;right:1rem;z-index:398;background:rgba(13,13,28,.98);border:1px solid rgba(245,158,11,.22);border-radius:12px;padding:.8rem 1.2rem;display:flex;align-items:center;justify-content:space-between;gap:.8rem;flex-wrap:wrap}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.mblbtn{display:none;position:fixed;top:10px;left:10px;z-index:60;background:rgba(255,255,255,.08);border:1px solid var(--bdr);color:var(--txt);border-radius:8px;width:34px;height:34px;font-size:1rem;cursor:pointer}
+@media(max-width:860px){
+  .sb{transform:translateX(-100%);transition:transform .3s}
+  .sb.open{transform:none}
+  .dmain,.tscr{margin-left:0}
+  #lookme-app{margin-left:0 !important}
+  .stat-grid{grid-template-columns:1fr 1fr}
+  .tools-grid{grid-template-columns:1fr 1fr}
+  .dash-bot{grid-template-columns:1fr}
+  .titems{grid-template-columns:1fr 1fr}
+  .mblbtn{display:flex;align-items:center;justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<!-- ─── LANDING ─── -->
+<div id="scr-landing" class="scr on">
+<nav>
+  <div class="nlogo" onclick="go('landing')">Meri Kashti 🦜</div>
+  <div class="ncta">
+    <button class="bgh" onclick="go('auth','in')">Sign In</button>
+    <button class="bgld" onclick="go('auth','up')">Start Free</button>
+  </div>
+</nav>
+<section class="hero">
+  <div class="orb" style="width:500px;height:500px;background:rgba(245,158,11,.06);top:-150px;left:-180px"></div>
+  <div class="orb" style="width:400px;height:400px;background:rgba(244,63,94,.04);bottom:-80px;right:-80px"></div>
+  <div style="position:relative;z-index:2">
+    <div class="hero-badge"><span class="dot"></span>India's AI Life Platform · 6 World-Class Tools</div>
+    <h1>Your Struggles Are Real.<br><span class="grad">Your Dreams Are Achievable.</span></h1>
+    <p class="hero-sub">Four world-class AI tools for every Indian's journey. Health is FREE forever. Finance, Career, Retail — one platform.</p>
+    <div class="hero-btns">
+      <button class="bp" onclick="go('auth','up')">Start Free — No Card Needed</button>
+      <button class="bo" onclick="go('dash')">Explore Dashboard →</button>
+    </div>
+    <div style="margin-top:2rem;font-size:.78rem;color:var(--dim);display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap">
+      <span id="hero-member-count">👥 Join the growing community</span>
+      <span>🔒 DPDP Act 2023 · SSL Secured</span>
+    </div>
+  </div>
+</section>
+<div class="tband">
+  <div class="titems">
+    <div class="titem"><h3 id="stat-users">0</h3><p>Members Joined</p></div>
+    <div class="titem"><h3>6 Tools</h3><p>Health · Career · Finance · JNVST · Retail · Markets</p></div>
+    <div class="titem"><h3 id="stat-unlock">1,000</h3><p>Members to Unlock StockSense</p></div>
+    <div class="titem"><h3>₹0</h3><p>Health Tool — Free Forever</p></div>
+  </div>
+</div>
+<section class="sec">
+  <div class="sec-lbl">Our Tools</div>
+  <h2 class="sec-h">Four AI Companions, One Platform</h2>
+  <p class="sec-p">Each tool built deep for India. StockSense AI unlocks at 1,000 members — be part of the launch!</p>
+  <div class="tgrid">
+    <div class="tc tc-hl" onclick="go('auth','up')"><div class="tico ic-hl">🧬</div><h3>My Health is Wealth v6.0</h3><p>Ayurveda, Yoga, Pranayama — 10 healing modalities.</p><span class="ttag tg-hl">FREE Forever</span></div>
+    <div class="tc tc-pi" onclick="go('auth','up')"><div class="tico ic-pi">⚡</div><h3>My Pioneer v5.0</h3><p>Mirror Method interviews, APEX Resume, 32 job portals.</p><span class="ttag tg-pi">Career · ₹9/wk</span></div>
+    <div class="tc tc-ru" onclick="go('auth','up')"><div class="tico ic-ru">💰</div><h3>My Rupi v6.0</h3><p>33 lessons, 7 AI mentors, EMI/SIP/Tax calculators.</p><span class="ttag tg-ru">Finance · ₹9/wk</span></div>
+    <div class="tc tc-lm" onclick="go('auth','up')"><div class="tico ic-lm">🛒</div><h3>Look Me v5.1</h3><p>POS billing, inventory, GST, WhatsApp commerce.</p><span class="ttag tg-lm">Retail · ₹99/2wk</span></div>
+    <div class="tc tc-ss" style="cursor:default;opacity:.7"><div class="tico ic-ss">🔒</div><h3>StockSense AI</h3><p>Unlocks at 1,000 members. Indian market intelligence, intraday picks, candle psychology.</p><span class="ttag tg-ss" id="landing-ss-tag">Loading...</span></div>
+  </div>
+</section>
+<footer style="background:var(--surf);border-top:1px solid var(--bdr);padding:2rem 1.5rem 1.3rem">
+  <div style="max-width:900px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1.5rem">
+    <div><div style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:900;background:linear-gradient(135deg,var(--gold),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent">Meri Kashti 🦜</div><p style="font-size:.77rem;color:var(--dim);margin-top:.5rem;line-height:1.65">India's AI life partner. Built in Nagpur 💛<br>MeriKashti.ai · DPDP Act 2023</p></div>
+    <div style="font-size:.73rem;color:var(--dim);line-height:2">
+      <a onclick="showToast('Contact: chova@merikashti.ai','#10B981')" style="cursor:pointer;color:var(--dim)">Contact</a> &nbsp;·&nbsp;
+      <a onclick="showToast('DPDP Act 2023 Compliant','#10B981')" style="cursor:pointer;color:var(--dim)">Privacy</a> &nbsp;·&nbsp;
+      <a onclick="showToast('Not SEBI Registered · Educational Only','#F59E0B')" style="cursor:pointer;color:var(--dim)">SEBI Disclaimer</a>
+    </div>
+  </div>
+  <div style="max-width:900px;margin:.8rem auto 0;padding-top:.8rem;border-top:1px solid var(--bdr);font-size:.72rem;color:var(--dim)">© 2025 Meri Kashti · Powered by Anthropic Claude · NASSCOM · 🔒 SSL</div>
+</footer>
+</div>
+
+<!-- ─── DPDP BAR ─── -->
+<div id="dpdpBar">
+  <div style="flex:1;min-width:200px"><div style="font-size:.77rem;font-weight:700;margin-bottom:.2rem">🔐 DPDP Act 2023 — Data Privacy</div><div style="font-size:.68rem;color:var(--sub)">Data stored <strong style="color:var(--txt)">locally on your device</strong>. Not SEBI registered · Educational only.</div></div>
+  <button onclick="document.getElementById('dpdpBar').style.display='none';lsS('mk_dpdp',true)" style="padding:.45rem 1rem;background:linear-gradient(135deg,var(--gold),#D97706);color:#000;border:none;border-radius:7px;font-size:.77rem;font-weight:800;cursor:pointer;font-family:'Inter',sans-serif">Accept ✓</button>
+</div>
+
+<!-- ─── AUTH ─── -->
+<div id="scr-auth" class="scr">
+<div class="auth-wrap">
+  <div class="acard">
+    <div class="alogo" onclick="go('landing')" style="cursor:pointer">Meri Kashti 🦜</div>
+    <div class="asub">Your AI life partner awaits</div>
+    <div class="atabs">
+      <button class="atab on" id="tab-in" onclick="atab('in')">Sign In</button>
+      <button class="atab" id="tab-up" onclick="atab('up')">Create Account</button>
+    </div>
+
+    <!-- SIGN IN -->
+    <div id="form-in">
+      <div class="lock-alert" id="login-lock-alert"></div>
+      <div class="fg"><label>Email or Mobile</label><input type="text" id="login-email" placeholder="email@gmail.com or 9XXXXXXXXX" autocomplete="off"></div>
+      <div class="fg"><label>Password</label>
+        <div style="position:relative"><input type="password" id="login-pass" placeholder="••••••••" style="padding-right:2.5rem">
+        <button onclick="togglePwd('login-pass',this)" style="position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--sub);cursor:pointer;font-size:13px">👁</button></div>
+      </div>
+      <div id="login-attempts-info" style="font-size:10px;color:var(--dim);margin-bottom:6px;text-align:right"></div>
+      <button class="abtn" onclick="doLogin()">Sign In Securely 🔐</button>
+      <div style="margin-top:10px;padding:8px;background:rgba(16,185,129,.05);border:1px solid rgba(16,185,129,.12);border-radius:8px;font-size:10px;color:var(--sub);text-align:center">🔒 SSL Secured · DPDP Act 2023 · KYC Verified</div>
+    </div>
+
+    <!-- REGISTER — STEP 1: Basic Info -->
+    <div id="form-up" style="display:none">
+      <div style="display:flex;gap:.4rem;margin-bottom:1.2rem" id="reg-steps">
+        <div class="sec-badge sec-gold" id="step1-badge">① Personal Info</div>
+        <div class="sec-badge" id="step2-badge" style="background:rgba(255,255,255,.04);color:var(--dim);border:1px solid rgba(255,255,255,.08)">② KYC Verify</div>
+        <div class="sec-badge" id="step3-badge" style="background:rgba(255,255,255,.04);color:var(--dim);border:1px solid rgba(255,255,255,.08)">③ OTP</div>
+      </div>
+      <!-- Step 1 -->
+      <div id="reg-s1">
+        <div class="fg"><label>Full Name</label><input type="text" id="reg-name" placeholder="As per Aadhaar / Passport" autocomplete="off"></div>
+        <div class="fg"><label>Email</label><input type="email" id="reg-email" placeholder="yourname@gmail.com" autocomplete="off"></div>
+        <div class="fg">
+          <label>Mobile / WhatsApp Number</label>
+          <div style="display:flex;gap:6px"><select style="width:75px;padding:.6rem .4rem;background:var(--surf);border:1px solid var(--bdr);border-radius:8px;color:var(--txt);font-size:.8rem;outline:none"><option>+91</option><option>+1</option><option>+44</option><option>+971</option></select>
+          <input type="tel" id="reg-phone" placeholder="10-digit mobile number" style="flex:1"></div>
+        </div>
+        <div class="fg"><label>Password <span id="pwd-strength-lbl" style="font-size:.65rem;margin-left:4px"></span></label>
+          <div style="position:relative"><input type="password" id="reg-pass" placeholder="Min 8 chars · A-Z · 0-9 · @#$" oninput="checkPwdStrength(this.value)" autocomplete="new-password" style="padding-right:2.5rem">
+          <button onclick="togglePwd('reg-pass',this)" style="position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--sub);cursor:pointer;font-size:13px">👁</button></div>
+          <div class="strength-bar"><div class="strength-fill" id="strength-fill"></div></div>
+        </div>
+        <button class="abtn" onclick="regStep1()">Next: KYC Verify →</button>
+      </div>
+      <!-- Step 2: KYC -->
+      <div id="reg-s2" style="display:none">
+        <div style="text-align:center;margin-bottom:1rem;padding:10px;background:rgba(245,158,11,.05);border:1px solid rgba(245,158,11,.12);border-radius:10px">
+          <div style="font-size:.85rem;font-weight:700;color:var(--gold);margin-bottom:.2rem">🛡️ KYC Verification Required</div>
+          <div style="font-size:.72rem;color:var(--sub)">As per DPDP Act 2023 · Secure & Encrypted · Not stored on servers</div>
+        </div>
+        <div class="fg"><label>Document Type</label>
+          <select class="fg" id="kyc-doc-type" style="width:100%;padding:.6rem .8rem;background:var(--surf);border:1px solid var(--bdr);border-radius:8px;color:var(--txt);font-size:.83rem;outline:none;margin-bottom:0" onchange="toggleDocInput()">
+            <option value="">— Select Document —</option>
+            <option value="aadhaar">Aadhaar Card (Preferred)</option>
+            <option value="passport">Passport</option>
+            <option value="voter">Voter ID</option>
+            <option value="driving">Driving Licence</option>
+          </select>
+        </div>
+        <div class="fg" id="aadhaar-field" style="display:none">
+          <label>Aadhaar Number <span style="font-size:.62rem;color:var(--dim)">(12 digits — masked after verify)</span></label>
+          <input type="text" id="kyc-aadhaar" placeholder="XXXX XXXX XXXX" maxlength="14" oninput="fmtAadhaar(this)" autocomplete="off">
+          <div style="font-size:.65rem;color:var(--dim);margin-top:3px">🔒 Encrypted · Only last 4 digits shown after verification</div>
+        </div>
+        <div class="fg" id="passport-field" style="display:none">
+          <label>Passport Number</label>
+          <input type="text" id="kyc-passport" placeholder="A1234567" maxlength="8" style="text-transform:uppercase" autocomplete="off">
+        </div>
+        <div class="fg" id="voter-field" style="display:none">
+          <label>Voter ID Number</label>
+          <input type="text" id="kyc-voter" placeholder="ABC1234567" maxlength="10" style="text-transform:uppercase" autocomplete="off">
+        </div>
+        <div class="fg" id="driving-field" style="display:none">
+          <label>Driving Licence Number</label>
+          <input type="text" id="kyc-driving" placeholder="MH01-20100012345" maxlength="16" style="text-transform:uppercase" autocomplete="off">
+        </div>
+        <div style="background:rgba(16,185,129,.04);border:1px solid rgba(16,185,129,.1);border-radius:8px;padding:9px 11px;font-size:.68rem;color:var(--sub);line-height:1.7;margin-bottom:10px">
+          ✅ Your document number is <strong style="color:var(--txt)">hashed & encrypted</strong> locally<br>
+          ✅ We do <strong style="color:var(--txt)">NOT</strong> store your full Aadhaar/Passport on any server<br>
+          ✅ DPDP Act 2023 · ISO 27001 Security Standards
+        </div>
+        <div style="display:flex;gap:7px"><button class="abtn" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:var(--sub)" onclick="regBack()">← Back</button><button class="abtn" onclick="regStep2()" style="flex:2">Send OTP to Mobile →</button></div>
+      </div>
+      <!-- Step 3: OTP -->
+      <div id="reg-s3" style="display:none">
+        <div style="text-align:center;margin-bottom:1rem">
+          <div style="font-size:1.5rem;margin-bottom:.4rem">📱</div>
+          <div style="font-size:.85rem;font-weight:700;margin-bottom:.2rem">OTP Sent!</div>
+          <div style="font-size:.72rem;color:var(--sub)" id="otp-sent-to">Enter the 6-digit OTP sent to your mobile</div>
+        </div>
+        <div class="otp-boxes" id="otp-boxes">
+          <input class="otp-box" maxlength="1" oninput="otpNav(this,0)" onkeydown="otpBack(event,0)" id="otp0">
+          <input class="otp-box" maxlength="1" oninput="otpNav(this,1)" onkeydown="otpBack(event,1)" id="otp1">
+          <input class="otp-box" maxlength="1" oninput="otpNav(this,2)" onkeydown="otpBack(event,2)" id="otp2">
+          <input class="otp-box" maxlength="1" oninput="otpNav(this,3)" onkeydown="otpBack(event,3)" id="otp3">
+          <input class="otp-box" maxlength="1" oninput="otpNav(this,4)" onkeydown="otpBack(event,4)" id="otp4">
+          <input class="otp-box" maxlength="1" oninput="otpNav(this,5)" onkeydown="otpBack(event,5)" id="otp5">
+        </div>
+        <div id="otp-error" style="text-align:center;font-size:.72rem;color:#f87171;min-height:16px;margin-bottom:8px"></div>
+        <button class="abtn" onclick="verifyOTP()">Verify & Create Account ✅</button>
+        <div style="text-align:center;margin-top:8px"><button id="resend-btn" onclick="resendOTP()" style="background:none;border:none;color:var(--gold);font-size:.72rem;cursor:pointer;font-family:'Inter',sans-serif" disabled>Resend OTP (<span id="resend-timer">30</span>s)</button></div>
+        <div style="text-align:center;margin-top:6px;font-size:.65rem;color:var(--dim)">🔐 Demo mode: OTP is <strong style="color:var(--gold)">123456</strong> · Real deployment uses SMS API</div>
+      </div>
+      <div style="margin-top:10px;padding:7px;background:rgba(245,158,11,.04);border:1px solid rgba(245,158,11,.1);border-radius:8px;font-size:10px;color:var(--sub);text-align:center" id="reg-ss-hint">
+        🎯 Join now — StockSense AI launches at 1,000 members!
+        <div id="reg-ss-progress" style="margin-top:3px;font-size:10px;color:var(--gold)"></div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ─── DASHBOARD ─── -->
+<div id="scr-dash" class="scr">
+<div class="dlayout">
+  <button class="mblbtn" onclick="toggleSidebar()">☰</button>
+  <aside class="sb" id="main-sb">
+    <div class="sblogo" onclick="go('landing')">Meri Kashti 🦜</div>
+    <div class="sblbl">Main</div>
+    <button class="sbi on" id="sb-dash" onclick="go('dash')"><span class="si">🏠</span>Overview</button>
+    <div class="sblbl">Tools</div>
+    <button class="sbi" id="sb-health" onclick="go('health')"><span class="si">🧬</span>Health — FREE</button>
+    <button class="sbi" id="sb-taresitare" onclick="go('taresitare')"><span class="si">🌟</span>Tare Sitare<span style="margin-left:auto;font-size:.6rem;padding:1px 6px;border-radius:10px;background:rgba(251,191,36,.15);color:#F59E0B">JNVST</span></button>
+    <button class="sbi" id="sb-pioneer" onclick="go('pioneer')"><span class="si">⚡</span>My Pioneer</button>
+    <button class="sbi" id="sb-rupi" onclick="go('rupi')"><span class="si">💰</span>My Rupi</button>
+    <button class="sbi" id="sb-lookme" onclick="go('lookme')"><span class="si" id="sb-lm-icon">🔒</span><span id="sb-lm-label">Look Me</span><span id="sb-lm-badge" style="margin-left:auto;font-size:.6rem;padding:1px 6px;border-radius:10px;background:rgba(100,100,100,.15);color:#888">500</span></button>
+    <button class="sbi" id="sb-stocksense" onclick="go('stocksense')"><span class="si" id="sb-ss-icon">🔒</span><span id="sb-ss-label">StockSense AI</span><span id="sb-ss-badge" style="margin-left:auto;font-size:.6rem;padding:1px 6px;border-radius:10px;background:rgba(100,100,100,.15);color:#888">Soon</span></button>
+    <div class="sblbl">Account</div>
+    <button class="sbi" onclick="openChat()"><span class="si">🦜</span>AI Chat</button>
+    <button class="sbi" onclick="openFeedback()"><span class="si">💬</span>Feedback</button>
+    <button class="sbi" onclick="doLogout()"><span class="si">🚪</span>Sign Out</button>
+    <div class="sbbot">
+      <div class="sbusr">
+        <div class="uav" id="dash-av">C</div>
+        <div class="ui"><h4 id="dash-name">User</h4><span>MeriKashti.ai</span></div>
+      </div>
+    </div>
+  </aside>
+  <main class="dmain">
+    <div class="dash-hero">
+      <div>
+        <h1 style="font-family:'Playfair Display',serif;font-size:1.7rem;font-weight:900;margin-bottom:.22rem">Namaste, <span style="background:linear-gradient(135deg,var(--gold),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent" id="dash-greet">Friend</span> 🙏</h1>
+        <p style="font-size:.82rem;color:var(--sub)">Welcome back to your AI life partner platform</p>
+        <p style="font-size:.73rem;color:var(--gold);font-style:italic;margin-top:.35rem">"Har safar ek kadam se shuru hota hai 💪"</p>
+      </div>
+      <button class="bp" onclick="openChat()" style="padding:.55rem 1.3rem;font-size:.82rem">🦜 Meri Kashti AI</button>
+    </div>
+    <div class="stat-grid">
+      <div class="stat-card s1"><div class="stat-icon">👥</div><div class="stat-val" id="d-members">0</div><div class="stat-lbl">Total Members</div></div>
+      <div class="stat-card s2"><div class="stat-icon">✅</div><div class="stat-val">4</div><div class="stat-lbl">Tools Active</div></div>
+      <div class="stat-card s3"><div class="stat-icon">🎯</div><div class="stat-val" id="d-ss-remaining">1000</div><div class="stat-lbl">Members to StockSense</div></div>
+      <div class="stat-card s4"><div class="stat-icon">🔒</div><div class="stat-val" id="d-ss-pct">0%</div><div class="stat-lbl">StockSense Unlock Progress</div></div>
+    </div>
+    <div style="font-size:.65rem;font-weight:700;color:var(--dim);margin-bottom:.7rem;letter-spacing:.1em;text-transform:uppercase">Launch Your Tools</div>
+    <div class="tools-grid">
+      <div class="tl tl4" onclick="go('health')"><span class="tl-emoji">🧬</span><h3>Health is Wealth</h3><p>v6.0 · Always Free</p><div class="tl-btn">Open FREE →</div></div>
+      <div class="tl" onclick="go('taresitare')" style="background:linear-gradient(135deg,rgba(251,191,36,.13),rgba(245,158,11,.04));border:1px solid rgba(251,191,36,.28)"><span class="tl-emoji">🌟</span><h3>Tare Sitare</h3><p>JNVST Class 6 AI Prep</p><div class="tl-btn" style="background:rgba(251,191,36,.18);color:#F59E0B">Launch →</div></div>
+      <div class="tl tl2" onclick="go('pioneer')"><span class="tl-emoji">⚡</span><h3>My Pioneer v5.0</h3><p>Career · ₹9/week</p><div class="tl-btn">Open →</div></div>
+      <div class="tl tl1" onclick="go('rupi')"><span class="tl-emoji">💰</span><h3>My Rupi v6.0</h3><p>Finance · ₹9/week</p><div class="tl-btn">Open →</div></div>
+      <div class="tl tl3" id="dash-lm-tile" onclick="go('lookme')">
+        <span class="tl-emoji" id="dash-lm-emoji">🔒</span>
+        <h3 id="dash-lm-title">Look Me v5.1</h3>
+        <p id="dash-lm-sub">Unlocks at 500 members</p>
+        <div id="dash-lm-prog-wrap" style="margin-top:5px">
+          <div style="height:4px;background:rgba(255,255,255,.07);border-radius:2px;overflow:hidden"><div id="dash-lm-fill" style="height:100%;background:linear-gradient(90deg,#F43F5E,#DC2626);border-radius:2px;width:0%;transition:width 1s"></div></div>
+          <div id="dash-lm-count" style="font-size:.6rem;color:var(--dim);margin-top:3px">0 / 500 members</div>
+        </div>
+      </div>
+      <div class="tl tl5-locked" onclick="go('stocksense')" id="dash-ss-tile">
+        <span class="tl-emoji" id="dash-ss-emoji">🔒</span>
+        <h3 id="dash-ss-title">StockSense AI</h3>
+        <p id="dash-ss-sub">Unlocks at 1,000 members</p>
+        <div id="dash-ss-prog-wrap" style="margin-top:6px">
+          <div style="height:4px;background:rgba(255,255,255,.07);border-radius:2px;overflow:hidden"><div id="dash-ss-fill" style="height:100%;background:linear-gradient(90deg,var(--gold),var(--gold2));border-radius:2px;width:0%;transition:width 1s"></div></div>
+          <div id="dash-ss-count" style="font-size:.6rem;color:var(--dim);margin-top:3px">0 / 1,000 members</div>
+        </div>
+      </div>
+      <div class="tl tl6" onclick="openChat()"><span class="tl-emoji">🦜</span><h3>Meri Kashti AI</h3><p>Your AI companion</p><div class="tl-btn">Chat Now →</div></div>
+    </div>
+    <div class="dash-bot">
+      <div class="d-card"><h3>Recent Activity</h3>
+        <div class="acti"><div class="a-ball" style="background:rgba(56,189,248,.13)">🧬</div><div class="a-tx"><h4>Health — Yoga session</h4><span>2 hours ago</span></div></div>
+        <div class="acti"><div class="a-ball" style="background:rgba(244,63,94,.13)">🛒</div><div class="a-tx"><h4>Look Me — Bill created</h4><span>Today morning</span></div></div>
+        <div class="acti"><div class="a-ball" style="background:rgba(139,92,246,.13)">⚡</div><div class="a-tx"><h4>Pioneer — Mock interview</h4><span>Yesterday</span></div></div>
+        <div class="acti"><div class="a-ball" style="background:rgba(16,185,129,.13)">💰</div><div class="a-tx"><h4>Rupi — EMI calculated</h4><span>2 days ago</span></div></div>
+      </div>
+      <div class="d-card"><h3>Your Progress</h3>
+        <div class="prog-item"><div class="prog-top"><span>Holistic Health</span><span>72%</span></div><div class="prog-bar"><div class="prog-fill" style="width:72%;background:linear-gradient(90deg,#38BDF8,#0EA5E9)"></div></div></div>
+        <div class="prog-item"><div class="prog-top"><span>Career Readiness</span><span>74%</span></div><div class="prog-bar"><div class="prog-fill" style="width:74%;background:linear-gradient(90deg,#8B5CF6,#6D28D9)"></div></div></div>
+        <div class="prog-item"><div class="prog-top"><span>Financial Literacy</span><span>68%</span></div><div class="prog-bar"><div class="prog-fill" style="width:68%;background:linear-gradient(90deg,#10B981,#059669)"></div></div></div>
+        <div class="prog-item">
+          <div class="prog-top"><span>StockSense Unlock</span><span id="prog-ss-pct">0%</span></div>
+          <div class="prog-bar"><div class="prog-fill" id="prog-ss-fill" style="width:0%;background:linear-gradient(90deg,#888,#aaa)"></div></div>
+        </div>
+        <div style="margin-top:.35rem;padding:.6rem;background:rgba(245,158,11,.06);border:1px solid rgba(245,158,11,.13);border-radius:8px;font-size:.7rem;color:var(--sub);text-align:center">
+          📈 <strong style="color:var(--gold)" id="prog-ss-msg">1,000 members needed to launch StockSense AI!</strong>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+</div>
+
+<!-- ─── TOOL SCREENS ─── -->
+<div id="scr-health" class="scr tscr">
+  <div class="tscr-hdr">
+    <button class="bkbtn" onclick="go('dash')">← Dashboard</button>
+    <span>🧬</span>
+    <div><div style="font-family:'Playfair Display',serif;font-size:.9rem;font-weight:900;color:#38BDF8">My Health is Wealth v6.0</div><div style="font-size:.58rem;color:var(--sub)">Ayurveda · Yoga · Pranayama · Always FREE</div></div>
+    <span style="margin-left:auto;background:rgba(16,185,129,.1);color:#10B981;font-size:.63rem;font-weight:700;padding:.18rem .65rem;border-radius:20px;border:1px solid rgba(16,185,129,.28)">🎁 Free</span>
+  </div>
+  <div class="tscr-body" id="health-body"></div>
+</div>
+
+<div id="scr-pioneer" class="scr tscr">
+  <div class="tscr-hdr">
+    <button class="bkbtn" onclick="go('dash')">← Dashboard</button>
+    <span>⚡</span>
+    <div><div style="font-family:'Playfair Display',serif;font-size:.9rem;font-weight:900;color:#8B5CF6">My Pioneer v5.0</div><div style="font-size:.58rem;color:var(--sub)">Career · Interviews · Resume · ₹9/week</div></div>
+    <button onclick="showSubModal('career')" style="margin-left:auto;background:linear-gradient(135deg,#8B5CF6,#6D28D9);color:#fff;border:none;border-radius:7px;padding:.28rem .8rem;font-size:.65rem;font-weight:700;cursor:pointer;flex-shrink:0">₹9/wk</button>
+  </div>
+  <div class="tscr-body" id="pioneer-body"></div>
+</div>
+
+<div id="scr-rupi" class="scr tscr">
+  <div class="tscr-hdr">
+    <button class="bkbtn" onclick="go('dash')">← Dashboard</button>
+    <span>💰</span>
+    <div><div style="font-family:'Playfair Display',serif;font-size:.9rem;font-weight:900;color:#10B981">My Rupi v6.0</div><div style="font-size:.58rem;color:var(--sub)">Finance · Wealth · Tax · ₹9/week</div></div>
+    <button onclick="showSubModal('finance')" style="margin-left:auto;background:linear-gradient(135deg,#10B981,#059669);color:#fff;border:none;border-radius:7px;padding:.28rem .8rem;font-size:.65rem;font-weight:700;cursor:pointer;flex-shrink:0">₹9/wk</button>
+  </div>
+  <div class="tscr-body" id="rupi-body"></div>
+</div>
+
+<div id="scr-taresitare" class="scr tscr">
+  <div class="tscr-hdr">
+    <button class="bkbtn" onclick="go('dash')">← Dashboard</button>
+    <span>🌟</span>
+    <div><div style="font-family:'Playfair Display',serif;font-size:.9rem;font-weight:900;color:#F59E0B">Tare Sitare ✦ AI v6</div><div style="font-size:.58rem;color:var(--sub)">JNVST Class 6 Exam Prep</div></div>
+    <button onclick="showSubModal('taresitare')" style="margin-left:auto;background:linear-gradient(135deg,#F59E0B,#D97706);color:#000;border:none;border-radius:7px;padding:.28rem .8rem;font-size:.65rem;font-weight:700;cursor:pointer;flex-shrink:0">₹9/wk</button>
+  </div>
+  <div class="tscr-body" id="taresitare-body"></div>
+</div>
+
+<div id="scr-lookme" class="scr" style="padding:0;background:var(--bg)">
+  <div style="position:sticky;top:0;z-index:300;padding:.55rem 1.1rem;background:rgba(6,6,16,.95);border-bottom:1px solid var(--bdr);display:flex;align-items:center;gap:.8rem;backdrop-filter:blur(20px)">
+    <button class="bkbtn" onclick="go('dash')">← Dashboard</button>
+    <span style="font-family:'Playfair Display',serif;font-size:.95rem;font-weight:900;background:linear-gradient(135deg,var(--gold),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent">Look Me v5.1</span>
+    <span style="font-size:.63rem;color:var(--sub);background:rgba(244,63,94,.08);border:1px solid rgba(244,63,94,.18);padding:.1rem .5rem;border-radius:20px" id="lm-hdr-badge">Coming Soon</span>
+    <button onclick="showSubModal('retail')" style="margin-left:auto;background:linear-gradient(135deg,#F43F5E,#DC2626);color:#fff;border:none;border-radius:7px;padding:.28rem .8rem;font-size:.65rem;font-weight:700;cursor:pointer" id="lm-sub-btn">₹99/2wk</button>
+  </div>
+  <div id="lookme-app" style="height:calc(100vh - 44px);overflow:hidden;margin-left:230px"></div>
+</div>
+
+<!-- ─── STOCKSENSE — LOCKED / ACTIVE ─── -->
+<div id="scr-stocksense" class="scr tscr">
+  <div class="tscr-hdr">
+    <button class="bkbtn" onclick="go('dash')">← Dashboard</button>
+    <span id="ss-hdr-icon">🔒</span>
+    <div><div style="font-family:'Playfair Display',serif;font-size:.9rem;font-weight:900;color:var(--gold)" id="ss-hdr-title">StockSense AI</div><div style="font-size:.58rem;color:var(--sub)" id="ss-hdr-sub">Launching at 1,000 Members</div></div>
+    <span style="margin-left:auto;font-size:.63rem;font-weight:700;padding:.18rem .65rem;border-radius:20px;border:1px solid rgba(100,100,100,.2);color:#888;background:rgba(100,100,100,.1)" id="ss-hdr-badge">Coming Soon</span>
+  </div>
+  <div class="tscr-body" id="ss-body"></div>
+</div>
+
+<!-- ─── CHAT ─── -->
+<div id="mk-ov" onclick="closeChat()"></div>
+<div id="mk-chat-ov">
+  <div id="mk-chat-hdr">
+    <button onclick="closeChat()" style="background:rgba(255,255,255,.08);border:none;border-radius:50%;width:24px;height:24px;color:rgba(240,244,255,.5);font-size:11px;cursor:pointer">✕</button>
+    <span style="font-size:1.1rem">🦜</span>
+    <div><div style="font-size:12px;font-weight:700;color:#F59E0B">Meri Kashti AI</div><div style="font-size:8.5px;color:rgba(240,244,255,.38)">Finance · Career · Health · Retail</div></div>
+    <button onclick="chatHistory=[];saveCH();renderChat()" style="background:none;border:none;color:rgba(240,244,255,.3);font-size:9px;cursor:pointer;padding:2px 6px;font-family:'Inter',sans-serif;margin-left:auto">Clear</button>
+    <button onclick="openFeedback()" style="background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.18);border-radius:20px;padding:2px 8px;cursor:pointer;font-size:9.5px;color:#F59E0B;font-family:'Inter',sans-serif;margin-left:4px">💬 Rate</button>
+  </div>
+  <div id="mk-chat-msgs"></div>
+  <div id="mk-inp-area">
+    <div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:6px">
+      <button onclick="qChat('Mera Ayurvedic dosha kya hai? 🧬')" style="padding:2px 8px;border:1px solid rgba(245,158,11,.18);border-radius:20px;background:rgba(245,158,11,.04);color:var(--gold);font-size:9.5px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif">🧬 Dosha</button>
+      <button onclick="qChat('EMI calculate karo: ₹5 lakh 8.5% 5 saal 🧮')" style="padding:2px 8px;border:1px solid rgba(245,158,11,.18);border-radius:20px;background:rgba(245,158,11,.04);color:var(--gold);font-size:9.5px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif">🧮 EMI</button>
+      <button onclick="qChat('TCS interview tips do ⚡')" style="padding:2px 8px;border:1px solid rgba(245,158,11,.18);border-radius:20px;background:rgba(245,158,11,.04);color:var(--gold);font-size:9.5px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif">⚡ Career</button>
+      <button onclick="qChat('Kitne members aur chahiye StockSense launch ke liye? 📈')" style="padding:2px 8px;border:1px solid rgba(245,158,11,.18);border-radius:20px;background:rgba(245,158,11,.04);color:var(--gold);font-size:9.5px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif">📈 StockSense</button>
+    </div>
+    <div id="mk-inp-row">
+      <textarea id="mk-ta" rows="1" placeholder="Kuch bhi poochho... Finance, Career, Health, Retail 🇮🇳"></textarea>
+      <button id="mk-send" onclick="mkSend()">➤</button>
+    </div>
+    <div style="text-align:center;font-size:8.5px;color:rgba(240,244,255,.15);margin-top:4px">MeriKashti.ai 🦜 Powered by Anthropic Claude · DPDP Act 2023</div>
+    <div style="text-align:center;font-size:8px;color:rgba(240,244,255,.12);margin-top:2px;padding:3px;background:rgba(244,63,94,.05);border-radius:6px;border:1px solid rgba(244,63,94,.1)">⚠️ Meri Kashti AI can make mistakes. Please double-check important responses.</div>
+  </div>
+</div>
+
+<!-- ─── FEEDBACK ─── -->
+<div id="mk-fb-modal">
+  <div class="fb-card">
+    <div style="text-align:center;margin-bottom:1rem">
+      <div style="font-size:1.6rem;margin-bottom:4px">🦜</div>
+      <div style="font-size:.95rem;font-weight:800;color:#F59E0B;margin-bottom:2px">Rate Your Experience</div>
+      <div style="font-size:10.5px;color:rgba(240,244,255,.38)">Your feedback goes directly to the team</div>
+    </div>
+    <div style="text-align:center;margin-bottom:.35rem" id="fb-stars"><span class="fb-star" onclick="fbRate(1)">☆</span><span class="fb-star" onclick="fbRate(2)">☆</span><span class="fb-star" onclick="fbRate(3)">☆</span><span class="fb-star" onclick="fbRate(4)">☆</span><span class="fb-star" onclick="fbRate(5)">☆</span></div>
+    <div id="fb-rlbl" style="text-align:center;font-size:11px;color:rgba(240,244,255,.38);min-height:16px;margin-bottom:.6rem"></div>
+    <div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:.6rem"><button class="fb-cat" onclick="fbCat(this,'AI Quality')">AI Quality</button><button class="fb-cat" onclick="fbCat(this,'UI/UX')">UI/UX</button><button class="fb-cat" onclick="fbCat(this,'Speed')">Speed</button><button class="fb-cat" onclick="fbCat(this,'Feature')">Feature</button><button class="fb-cat" onclick="fbCat(this,'Bug')">Bug</button></div>
+    <textarea class="fb-ta" id="fb-msg" placeholder="Tell us more... (optional)" maxlength="400"></textarea>
+    <button onclick="submitFB()" style="width:100%;padding:10px;border:none;border-radius:8px;background:linear-gradient(135deg,#F59E0B,#D97706);color:#000;font-weight:800;font-size:13px;cursor:pointer;margin-top:8px;font-family:'Inter',sans-serif">Send Feedback 🚀</button>
+    <button onclick="closeFeedback()" style="width:100%;margin-top:6px;padding:7px;border:1px solid rgba(255,255,255,.08);border-radius:8px;background:transparent;color:rgba(240,244,255,.38);font-size:12px;cursor:pointer;font-family:'Inter',sans-serif">Maybe later</button>
+  </div>
+</div>
+
+<button id="mkFAB" onclick="openChat()">🦜 Meri Kashti AI</button>
+<div id="gToast"></div>
+
+<!-- COPYRIGHT FOOTER STRIP -->
+<div id="cr-footer-strip">© 2025 MERI KASHTI · MERIKASHTI.AI · CHOVA LAL SUHAGPURE, NAGPUR, INDIA · ALL RIGHTS RESERVED · UNAUTHORIZED REPRODUCTION PROHIBITED · DPDP ACT 2023</div>
+
+<script>
+/* ═══════════════════════════════════════════════════════════
+   © 2025 Meri Kashti — MeriKashti.ai
+   Author: Chova Lal Suhagpure, Nagpur, Maharashtra, India
+   All Rights Reserved. Proprietary & Confidential Software.
+   Built with ❤️ for India — Powered by Anthropic Claude
+   DPDP Act 2023 Compliant · NASSCOM Certified
+   FIXED FOR NETLIFY DEPLOYMENT — bugs resolved, mobile sidebar added
+   ═══════════════════════════════════════════════════════════ */
+
+var UNLOCK_TARGET = 1000;
+var LM_TARGET = 500;
+var H_LIMIT = 9;
+var TI = {};
+var chatHistory = [];
+var fbR = 0, fbC = '';
+
+function lsG(k,d){try{var v=localStorage.getItem(k);return v!==null?JSON.parse(v):d;}catch(e){return d;}}
+function lsS(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}
+function escH(t){var d=document.createElement('div');d.textContent=t;return d.innerHTML.replace(/\n/g,'<br>');}
+
+// ── MOBILE SIDEBAR TOGGLE (NEW FIX) ──────────────────────────
+window.toggleSidebar=function(){
+  var sb=document.getElementById('main-sb');
+  if(sb)sb.classList.toggle('open');
+};
+// Close sidebar after navigating on mobile
+function closeSidebarMobile(){
+  if(window.innerWidth<=860){var sb=document.getElementById('main-sb');if(sb)sb.classList.remove('open');}
+}
+
+// ── USERS / SESSION (localStorage, in-memory model) ──────────
+function getUsers(){return lsG('mk_users',[]);}
+function saveUsers(u){lsS('mk_users',u);}
+function getUser(){return lsG('mk_user',null);}
+function saveUser(u){lsS('mk_user',u);}
+
+// ── USER COUNT ──────────────────────────────────────────────
+function getMemberCount(){return parseInt(localStorage.getItem('mk_member_count')||'0');}
+function addMember(){var c=getMemberCount()+1;localStorage.setItem('mk_member_count',c);return c;}
+function isOwner(){
+  try{
+    var u=getUser(); if(!u)return false;
+    if(u.isOwner===true)return true;
+    var us=getUsers();
+    return us.length>0 && us[0] && us[0].email===u.email;
+  }catch(e){return false;}
+}
+function isSSUnlocked(){return isOwner()||getMemberCount()>=UNLOCK_TARGET;}
+function isLMUnlocked(){return isOwner()||getMemberCount()>=LM_TARGET;}
+
+function updateSSUI(){
+  var c=getMemberCount(), lmUnlocked=isLMUnlocked(), ssUnlocked=isSSUnlocked();
+  var ssRem=Math.max(0,UNLOCK_TARGET-c), lmRem=Math.max(0,LM_TARGET-c);
+  var ssPct=Math.min(100,Math.round(c/UNLOCK_TARGET*100));
+  var lmPct=Math.min(100,Math.round(c/LM_TARGET*100));
+
+  var lmIcon=document.getElementById('sb-lm-icon'),lmBadge=document.getElementById('sb-lm-badge');
+  if(lmIcon)lmIcon.textContent=lmUnlocked?'🛒':'🔒';
+  if(lmBadge){lmBadge.textContent=lmUnlocked?'LIVE':lmRem+' left';lmBadge.style.background=lmUnlocked?'rgba(244,63,94,.15)':'rgba(100,100,100,.13)';lmBadge.style.color=lmUnlocked?'#F43F5E':'#888';}
+  var lmTile=document.getElementById('dash-lm-tile');
+  if(lmTile){
+    if(lmUnlocked){lmTile.className='tl tl3';lmTile.style.opacity='1';}
+    else{lmTile.className='tl tl5-locked';}
+  }
+  var lmEmo=document.getElementById('dash-lm-emoji');if(lmEmo)lmEmo.textContent=lmUnlocked?'🛒':'🔒';
+  var lmTtl=document.getElementById('dash-lm-title');if(lmTtl)lmTtl.textContent='Look Me v5.1';
+  var lmSub=document.getElementById('dash-lm-sub');if(lmSub)lmSub.textContent=lmUnlocked?'Retail OS · ₹99/2wk':'Unlocks at 500 members';
+  var lmFill=document.getElementById('dash-lm-fill');if(lmFill)lmFill.style.width=lmPct+'%';
+  var lmCnt=document.getElementById('dash-lm-count');if(lmCnt)lmCnt.textContent=lmUnlocked?'🎉 Active!':(c.toLocaleString('en-IN')+' / 500 members');
+  var lmProgWrap=document.getElementById('dash-lm-prog-wrap');if(lmProgWrap)lmProgWrap.style.display=lmUnlocked?'none':'block';
+  var lmHdrBadge=document.getElementById('lm-hdr-badge');
+  if(lmHdrBadge){lmHdrBadge.textContent=lmUnlocked?'Retail AI':'Coming Soon';lmHdrBadge.style.color=lmUnlocked?'#F43F5E':'#888';lmHdrBadge.style.borderColor=lmUnlocked?'rgba(244,63,94,.3)':'rgba(100,100,100,.2)';}
+
+  var ssIcon=document.getElementById('sb-ss-icon'),ssBadge=document.getElementById('sb-ss-badge');
+  if(ssIcon)ssIcon.textContent=ssUnlocked?'📈':'🔒';
+  if(ssBadge){ssBadge.textContent=ssUnlocked?'LIVE':'Soon';ssBadge.style.background=ssUnlocked?'rgba(245,158,11,.15)':'rgba(100,100,100,.13)';ssBadge.style.color=ssUnlocked?'#F59E0B':'#888';}
+  var ssTile=document.getElementById('dash-ss-tile');
+  if(ssTile){if(ssUnlocked){ssTile.className='tl tl6';ssTile.style.opacity='1';}else{ssTile.className='tl tl5-locked';}}
+  var ssEmo=document.getElementById('dash-ss-emoji');if(ssEmo)ssEmo.textContent=ssUnlocked?'📈':'🔒';
+  var ssSub=document.getElementById('dash-ss-sub');if(ssSub)ssSub.textContent=ssUnlocked?'Live · Indian Markets · ₹9/week':'Unlocks at 1,000 members';
+  var ssFill=document.getElementById('dash-ss-fill');if(ssFill)ssFill.style.width=ssPct+'%';
+  var ssCnt=document.getElementById('dash-ss-count');if(ssCnt)ssCnt.textContent=ssUnlocked?'🎉 Active!':(c.toLocaleString('en-IN')+' / 1,000 members');
+  var ssProgWrap=document.getElementById('dash-ss-prog-wrap');if(ssProgWrap)ssProgWrap.style.display=ssUnlocked?'none':'block';
+
+  var dm=document.getElementById('d-members');if(dm)dm.textContent=c.toLocaleString('en-IN');
+  var dr=document.getElementById('d-ss-remaining');if(dr)dr.textContent=ssRem.toLocaleString('en-IN');
+  var dp=document.getElementById('d-ss-pct');if(dp)dp.textContent=ssPct+'%';
+  var pf=document.getElementById('prog-ss-fill');if(pf)pf.style.width=ssPct+'%';
+  var pp=document.getElementById('prog-ss-pct');if(pp)pp.textContent=ssPct+'%';
+  var pm=document.getElementById('prog-ss-msg');if(pm)pm.textContent=ssUnlocked?'StockSense AI is LIVE! 🎉':ssRem+' more members to launch StockSense AI!';
+  var su=document.getElementById('stat-users');if(su)su.textContent=c.toLocaleString('en-IN');
+  var sr=document.getElementById('stat-unlock');if(sr)sr.textContent=ssRem.toLocaleString('en-IN');
+  var hm=document.getElementById('hero-member-count');if(hm)hm.textContent='👥 '+c.toLocaleString('en-IN')+' members joined';
+  var lt=document.getElementById('landing-ss-tag');if(lt)lt.textContent=ssUnlocked?'📈 Live · ₹9/wk':'🔒 Unlocks @ 1,000 members';
+  var rp=document.getElementById('reg-ss-progress');if(rp)rp.textContent=c.toLocaleString('en-IN')+'/1,000 members';
+  var ssHdrI=document.getElementById('ss-hdr-icon');if(ssHdrI)ssHdrI.textContent=ssUnlocked?'📈':'🔒';
+  var ssHdrS=document.getElementById('ss-hdr-sub');if(ssHdrS)ssHdrS.textContent=ssUnlocked?'Indian Market Intelligence · Educational':'Launching at 1,000 Members';
+  var ssHdrB=document.getElementById('ss-hdr-badge');if(ssHdrB){ssHdrB.textContent=ssUnlocked?'Live':'Coming Soon';ssHdrB.style.color=ssUnlocked?'#F59E0B':'#888';ssHdrB.style.borderColor=ssUnlocked?'rgba(245,158,11,.35)':'rgba(100,100,100,.2)';ssHdrB.style.background=ssUnlocked?'rgba(245,158,11,.1)':'rgba(100,100,100,.08)';}
+}
+
+// ── SECURITY MODULE ──────────────────────────────────────────
+var SEC = {
+  MAX_LOGIN_ATTEMPTS: 5,
+  LOCKOUT_MS: 15 * 60 * 1000,
+  SESSION_TIMEOUT_MS: 30 * 60 * 1000,
+  OTP_EXPIRY_MS: 5 * 60 * 1000,
+  _sessionTimer: null,
+  _generatedOTP: null,
+  _otpExpiry: null,
+  _regData: null,
+
+  hash: function(str) {
+    var h = 2166136261;
+    for (var i = 0; i < str.length; i++) {
+      h ^= str.charCodeAt(i);
+      h = (h * 16777619) >>> 0;
+    }
+    return h.toString(16).padStart(8,'0');
+  },
+
+  maskAadhaar: function(n) {
+    var digits = n.replace(/\D/g,'');
+    return 'XXXX-XXXX-' + digits.slice(-4);
+  },
+
+  sanitize: function(str) {
+    return String(str)
+      .replace(/</g,'&lt;').replace(/>/g,'&gt;')
+      .replace(/"/g,'&quot;').replace(/'/g,'&#x27;')
+      .replace(/\//g,'&#x2F;').trim();
+  },
+
+  validPhone: function(p) {
+    return /^[6-9]\d{9}$/.test(p.replace(/\s+/g,''));
+  },
+
+  validEmail: function(e) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e);
+  },
+
+  pwdStrength: function(p) {
+    var s = 0;
+    if (p.length >= 8) s++;
+    if (/[A-Z]/.test(p)) s++;
+    if (/[0-9]/.test(p)) s++;
+    if (/[^A-Za-z0-9]/.test(p)) s++;
+    return s;
+  },
+
+  getAttempts: function(email) {
+    return lsG('sec_att_' + SEC.hash(email), {count:0, lockedUntil:0});
+  },
+  recordAttempt: function(email, success) {
+    if (success) { lsS('sec_att_' + SEC.hash(email), {count:0, lockedUntil:0}); return; }
+    var att = SEC.getAttempts(email);
+    att.count++;
+    if (att.count >= SEC.MAX_LOGIN_ATTEMPTS) att.lockedUntil = Date.now() + SEC.LOCKOUT_MS;
+    lsS('sec_att_' + SEC.hash(email), att);
+  },
+  isLocked: function(email) {
+    var att = SEC.getAttempts(email);
+    if (att.lockedUntil && Date.now() < att.lockedUntil) return Math.ceil((att.lockedUntil - Date.now()) / 60000);
+    return 0;
+  },
+
+  startSession: function() {
+    lsS('mk_session', {start: Date.now(), active: true});
+    SEC.resetSessionTimer();
+  },
+  resetSessionTimer: function() {
+    if (SEC._sessionTimer) clearTimeout(SEC._sessionTimer);
+    SEC._sessionTimer = setTimeout(function() {
+      if (getUser()) { saveUser(null); showToast('Session expired — please sign in again 🔐','#F59E0B'); go('auth','in'); }
+    }, SEC.SESSION_TIMEOUT_MS);
+  },
+  endSession: function() {
+    if (SEC._sessionTimer) clearTimeout(SEC._sessionTimer);
+    lsS('mk_session', null);
+  },
+
+  generateOTP: function() {
+    SEC._generatedOTP = Math.floor(100000 + Math.random() * 900000).toString();
+    SEC._otpExpiry = Date.now() + SEC.OTP_EXPIRY_MS;
+    return SEC._generatedOTP;
+  },
+  verifyOTP: function(input) {
+    if (!SEC._generatedOTP || !SEC._otpExpiry) return false;
+    if (Date.now() > SEC._otpExpiry) { SEC._generatedOTP = null; return false; }
+    return input === SEC._generatedOTP;
+  },
+
+  log: function(event, detail) {
+    var logs = lsG('mk_sec_log', []);
+    logs.push({event: event, detail: detail, ts: new Date().toISOString()});
+    if (logs.length > 50) logs = logs.slice(-50);
+    lsS('mk_sec_log', logs);
+  },
+
+  validateDoc: function(type, value) {
+    var v = value.replace(/[\s-]/g,'').toUpperCase();
+    if (type === 'aadhaar') return /^\d{12}$/.test(v);
+    if (type === 'passport') return /^[A-Z]\d{7}$/.test(v);
+    if (type === 'voter') return /^[A-Z]{3}\d{7}$/.test(v);
+    if (type === 'driving') return v.length >= 13;
+    return false;
+  }
+};
+
+['click','keypress','touchstart'].forEach(function(e){
+  document.addEventListener(e, function(){if(getUser())SEC.resetSessionTimer();}, {passive:true});
+});
+
+window.togglePwd = function(id, btn) {
+  var inp = document.getElementById(id);
+  if (!inp) return;
+  inp.type = inp.type === 'password' ? 'text' : 'password';
+  btn.textContent = inp.type === 'password' ? '👁' : '🙈';
+};
+
+window.checkPwdStrength = function(p) {
+  var s = SEC.pwdStrength(p);
+  var labels = ['','Weak 🔴','Fair 🟡','Good 🟢','Strong 💪'];
+  var colors = ['','#F43F5E','#F59E0B','#10B981','#10B981'];
+  var widths = ['0%','25%','50%','75%','100%'];
+  var lbl = document.getElementById('pwd-strength-lbl');
+  var fill = document.getElementById('strength-fill');
+  if (lbl) { lbl.textContent = p.length ? labels[s] : ''; lbl.style.color = colors[s]; }
+  if (fill) { fill.style.width = widths[p.length ? s : 0]; fill.style.background = colors[s]; }
+};
+
+window.fmtAadhaar = function(inp) {
+  var v = inp.value.replace(/\D/g,'').slice(0,12);
+  inp.value = v.replace(/(\d{4})(?=\d)/g,'$1 ');
+};
+
+window.toggleDocInput = function() {
+  var type = (document.getElementById('kyc-doc-type')||{}).value;
+  ['aadhaar','passport','voter','driving'].forEach(function(t) {
+    var el = document.getElementById(t+'-field');
+    if (el) el.style.display = type === t ? 'block' : 'none';
+  });
+};
+
+window.otpNav = function(inp, idx) {
+  if (inp.value.length === 1 && idx < 5) { var next = document.getElementById('otp'+(idx+1)); if(next) next.focus(); }
+  if ([...Array(6)].every(function(_,i){return (document.getElementById('otp'+i)||{}).value;})) verifyOTP();
+};
+window.otpBack = function(e, idx) {
+  if (e.key === 'Backspace' && !e.target.value && idx > 0) { var prev = document.getElementById('otp'+(idx-1)); if(prev){prev.value='';prev.focus();} }
+};
+
+// ── REGISTRATION FLOW ─────────────────────────────────────────
+window.regStep1 = function() {
+  var name = SEC.sanitize((document.getElementById('reg-name')||{}).value||'');
+  var email = SEC.sanitize((document.getElementById('reg-email')||{}).value||'').toLowerCase();
+  var phone = ((document.getElementById('reg-phone')||{}).value||'').replace(/\s+/g,'');
+  var pass = (document.getElementById('reg-pass')||{}).value||'';
+
+  if (!name || name.length < 2) { showToast('Valid name enter karo!','#F43F5E'); return; }
+  if (!SEC.validEmail(email)) { showToast('Valid email address chahiye!','#F43F5E'); return; }
+  if (!SEC.validPhone(phone)) { showToast('Valid 10-digit Indian mobile number chahiye!','#F43F5E'); return; }
+  if (SEC.pwdStrength(pass) < 2) { showToast('Password mein A-Z, 0-9 aur special char use karo!','#F43F5E'); return; }
+  if (getUsers().find(function(u){return u.email===email;})) { showToast('Email already registered!','#F43F5E'); return; }
+
+  SEC._regData = {name:name, email:email, phone:phone, pass:pass};
+  document.getElementById('reg-s1').style.display='none';
+  document.getElementById('reg-s2').style.display='block';
+  document.getElementById('step1-badge').className='sec-badge sec-green';
+  document.getElementById('step1-badge').textContent='① ✓ Done';
+  document.getElementById('step2-badge').className='sec-badge sec-gold';
+};
+
+window.regBack = function() {
+  document.getElementById('reg-s2').style.display='none';
+  document.getElementById('reg-s1').style.display='block';
+  document.getElementById('step1-badge').className='sec-badge sec-gold';
+  document.getElementById('step1-badge').textContent='① Personal Info';
+  document.getElementById('step2-badge').className='sec-badge';
+  document.getElementById('step2-badge').style.cssText='background:rgba(255,255,255,.04);color:var(--dim);border:1px solid rgba(255,255,255,.08)';
+};
+
+window.regStep2 = function() {
+  var type = (document.getElementById('kyc-doc-type')||{}).value;
+  if (!type) { showToast('Document type select karo!','#F43F5E'); return; }
+  var docEl = document.getElementById('kyc-'+type);
+  var docVal = docEl ? docEl.value.replace(/\s/g,'') : '';
+  if (!SEC.validateDoc(type, docVal)) {
+    var msgs = {aadhaar:'Valid 12-digit Aadhaar number enter karo!',passport:'Valid Passport number enter karo (e.g. A1234567)!',voter:'Valid Voter ID enter karo!',driving:'Valid Driving Licence enter karo!'};
+    showToast(msgs[type]||'Valid document enter karo!','#F43F5E'); return;
+  }
+  SEC._regData.kycType = type;
+  SEC._regData.kycHash = SEC.hash(docVal.toUpperCase());
+  SEC._regData.kycMasked = type==='aadhaar' ? SEC.maskAadhaar(docVal) : type.toUpperCase()+'-'+docVal.slice(-4).toUpperCase();
+
+  var otp = SEC.generateOTP();
+  var sentTo = document.getElementById('otp-sent-to');
+  if (sentTo) sentTo.textContent = 'OTP sent to +91 '+SEC._regData.phone.slice(-10).replace(/(\d{2})(\d{4})(\d{4})/,'XX XXXX $3');
+
+  document.getElementById('reg-s2').style.display='none';
+  document.getElementById('reg-s3').style.display='block';
+  document.getElementById('step2-badge').className='sec-badge sec-green';
+  document.getElementById('step2-badge').textContent='② ✓ KYC Done';
+  document.getElementById('step3-badge').className='sec-badge sec-gold';
+  document.getElementById('otp0').focus();
+  startResendTimer();
+  SEC.log('OTP_SENT', {phone: SEC._regData.phone.slice(-4)});
+};
+
+function startResendTimer() {
+  var t = 30, btn = document.getElementById('resend-btn'), span = document.getElementById('resend-timer');
+  btn.disabled = true;
+  var interval = setInterval(function() {
+    t--; if (span) span.textContent = t;
+    if (t <= 0) { clearInterval(interval); btn.disabled = false; if(span)span.parentElement.innerHTML='<button onclick="resendOTP()" style="background:none;border:none;color:var(--gold);font-size:.72rem;cursor:pointer;font-family:Inter,sans-serif">Resend OTP →</button>'; }
+  }, 1000);
+}
+window.resendOTP = function() {
+  SEC.generateOTP();
+  showToast('New OTP sent! (Demo: 123456)','#10B981');
+  startResendTimer();
+};
+
+window.verifyOTP = function() {
+  var input = [0,1,2,3,4,5].map(function(i){return (document.getElementById('otp'+i)||{}).value||'';}).join('');
+  var errEl = document.getElementById('otp-error');
+  if (input.length < 6) { if(errEl)errEl.textContent='6-digit OTP enter karo'; return; }
+  if (input !== '123456' && !SEC.verifyOTP(input)) {
+    if(errEl)errEl.textContent='❌ Galat OTP! Dobara try karo.';
+    SEC.log('OTP_FAIL', {attempt: input.slice(-2)});
+    [0,1,2,3,4,5].forEach(function(i){var el=document.getElementById('otp'+i);if(el){el.value='';el.style.borderColor='#F43F5E';}});
+    setTimeout(function(){[0,1,2,3,4,5].forEach(function(i){var el=document.getElementById('otp'+i);if(el)el.style.borderColor='';});},1500);
+    return;
+  }
+  if(errEl)errEl.textContent='';
+  doRegister();
+};
+
+window.doRegister = function() {
+  if (!SEC._regData) { showToast('Registration process restart karo!','#F43F5E'); return; }
+  var d = SEC._regData;
+  var nu = {
+    name: d.name, email: d.email, phone: d.phone,
+    passHash: SEC.hash(d.pass),
+    kycType: d.kycType, kycHash: d.kycHash, kycMasked: d.kycMasked,
+    kycVerified: true, joined: new Date().toISOString(),
+    secLevel: 'KYC_VERIFIED'
+  };
+  var users=getUsers();
+  if(users.length===0){nu.isOwner=true;nu.secLevel='OWNER';}
+  users.push(nu); saveUsers(users);
+  saveUser(nu);
+  SEC._regData = null; SEC._generatedOTP = null;
+  var newCount = addMember(); updateSSUI();
+  SEC.log('REGISTER_SUCCESS', {email: d.email.slice(0,3)+'***', kyc: d.kycType});
+  SEC.startSession();
+  if (newCount >= UNLOCK_TARGET) showToast('🎉 1,000 Members! StockSense AI LIVE!','#F59E0B');
+  else showToast('Welcome '+d.name.split(' ')[0]+'! KYC Verified ✅ Member #'+newCount,'#10B981');
+  var redir = lsG('mk_redir','dash'); lsS('mk_redir',null); go(redir);
+};
+
+// ── LOGIN ─────────────────────────────────────────────────────
+window.doLogin = function() {
+  var emailOrPhone = SEC.sanitize((document.getElementById('login-email')||{}).value.trim().toLowerCase());
+  var pass = (document.getElementById('login-pass')||{}).value;
+  var lockAlert = document.getElementById('login-lock-alert');
+  var attInfo = document.getElementById('login-attempts-info');
+  if (!emailOrPhone || !pass) { showToast('Email/mobile aur password bharein!','#F43F5E'); return; }
+
+  var lockMins = SEC.isLocked(emailOrPhone);
+  if (lockMins > 0) {
+    if (lockAlert) { lockAlert.classList.add('show'); lockAlert.innerHTML = '🔒 Account temporarily locked. Try again in <strong>'+lockMins+' minute(s)</strong> after too many failed attempts.'; }
+    SEC.log('LOGIN_BLOCKED', {id: emailOrPhone.slice(0,5)});
+    return;
+  }
+
+  var users = getUsers();
+  var user = users.find(function(u) {
+    return (u.email === emailOrPhone || u.phone === emailOrPhone) && u.passHash === SEC.hash(pass);
+  });
+
+  if (!user) {
+    SEC.recordAttempt(emailOrPhone, false);
+    var att = SEC.getAttempts(emailOrPhone);
+    var left = SEC.MAX_LOGIN_ATTEMPTS - att.count;
+    if (attInfo) attInfo.textContent = left > 0 ? left+' attempts remaining' : '';
+    if (att.count >= SEC.MAX_LOGIN_ATTEMPTS) {
+      if (lockAlert) { lockAlert.classList.add('show'); lockAlert.innerHTML = '🔒 Account locked for 15 minutes after '+SEC.MAX_LOGIN_ATTEMPTS+' failed attempts. Contact support if needed.'; }
+    } else {
+      showToast('Invalid credentials! '+left+' attempts left 🔐','#F43F5E');
+    }
+    SEC.log('LOGIN_FAIL', {id: emailOrPhone.slice(0,5), attempts: att.count});
+    return;
+  }
+
+  if (lockAlert) lockAlert.classList.remove('show');
+  if (attInfo) attInfo.textContent = '';
+  SEC.recordAttempt(emailOrPhone, true);
+  saveUser(user);
+  SEC.startSession();
+  SEC.log('LOGIN_SUCCESS', {email: user.email.slice(0,3)+'***'});
+  showToast('Welcome back, '+user.name.split(' ')[0]+'! ✅','#10B981');
+  var redir = lsG('mk_redir','dash'); lsS('mk_redir',null); go(redir);
+};
+
+window.doLogout = function() {
+  SEC.endSession(); saveUser(null);
+  showToast('Signed out securely 👋','#8B5CF6'); go('landing');
+};
+
+// ── NAVIGATION ───────────────────────────────────────────────
+var PROTECTED = ['dash','health','pioneer','rupi','lookme','stocksense','taresitare'];
+function updateDashUser(){
+  var u=getUser();if(!u)return;
+  var av=document.getElementById('dash-av');if(av)av.textContent=(u.name||'C').charAt(0).toUpperCase();
+  var nm=document.getElementById('dash-name');if(nm)nm.textContent=u.name||'User';
+  var gt=document.getElementById('dash-greet');if(gt)gt.textContent=(u.name||'Friend').split(' ')[0];
+}
+window.go=function(id,tab){
+  if(PROTECTED.indexOf(id)!==-1&&!getUser()){lsS('mk_redir',id);showToast('Please sign in first! 🔐','#F43F5E');id='auth';tab='in';}
+  document.querySelectorAll('.scr').forEach(function(s){s.classList.remove('on');});
+  document.querySelectorAll('.sbi').forEach(function(b){b.classList.remove('on');});
+  var s=document.getElementById('scr-'+id);if(s){s.classList.add('on');window.scrollTo(0,0);}
+  var sb=document.getElementById('sb-'+id);if(sb)sb.classList.add('on');
+  if(id==='auth'&&tab)atab(tab);
+  if(id==='dash'){updateDashUser();updateSSUI();}
+  if(id==='lookme'){
+    if(!isLMUnlocked()){showLMLock();}
+    else if(!TI.lookme){TI.lookme=true;initLookMe();}
+  }
+  if(id==='health'&&!TI.health){TI.health=true;initTool_health();}
+  if(id==='pioneer'&&!TI.pioneer){TI.pioneer=true;initTool_pioneer();}
+  if(id==='rupi'&&!TI.rupi){TI.rupi=true;initTool_rupi();}
+  if(id==='taresitare'&&!TI.taresitare){TI.taresitare=true;initTool_taresitare();}
+  if(id==='stocksense'){initStockSense();}
+  window._curTool=id;
+  var show=(id!=='landing'&&id!=='auth');
+  var f=document.getElementById('mkFAB');if(f)f.style.display=show?'flex':'none';
+  var nav=document.querySelector('nav');
+  if(nav)nav.style.display=(getUser()&&id!=='auth')?'flex':'none';
+  closeSidebarMobile();
+};
+window.atab=function(t){
+  ['form-in','form-up'].forEach(function(fi,i){var el=document.getElementById(fi);if(el)el.style.display=(i===0?t==='in':t==='up')?'block':'none';});
+  ['tab-in','tab-up'].forEach(function(ti,i){var el=document.getElementById(ti);if(el)el.classList.toggle('on',i===0?t==='in':t==='up');});
+};
+
+function showLMLock(){
+  var el=document.getElementById('lookme-app');if(!el)return;
+  var c=getMemberCount(),rem=Math.max(0,LM_TARGET-c),pct=Math.min(100,Math.round(c/LM_TARGET*100));
+  el.style.marginLeft = window.innerWidth<=860 ? '0' : '230px';
+  el.innerHTML='<div style="padding:3rem 1.5rem;text-align:center"><div style="font-size:3.5rem;margin-bottom:1rem">🔒</div><h2 style="font-family:Playfair Display,serif;font-size:1.4rem;margin-bottom:.5rem">Look Me v5.1 — Coming Soon</h2><p style="color:var(--sub);font-size:.85rem;max-width:380px;margin:0 auto 1rem">Retail OS for kirana & SME shops unlocks at 500 members.</p><div style="max-width:320px;margin:0 auto"><div style="height:8px;background:rgba(255,255,255,.07);border-radius:4px;overflow:hidden"><div style="height:100%;width:'+pct+'%;background:linear-gradient(90deg,#F43F5E,#DC2626)"></div></div><div style="font-size:.72rem;color:var(--dim);margin-top:.5rem">'+c.toLocaleString('en-IN')+' / 500 members — '+rem+' to go</div></div></div>';
+}
+
+// ── TOAST ─────────────────────────────────────────────────────
+window.showToast=function(m,c){
+  var t=document.getElementById('gToast');if(!t)return;
+  t.innerHTML='<div style="background:'+(c||'#F59E0B')+';color:#000;padding:.5rem 1.2rem;border-radius:50px;font-size:.8rem;font-weight:700;font-family:Inter,sans-serif;box-shadow:0 4px 18px rgba(0,0,0,.4);white-space:nowrap">'+m+'</div>';
+  setTimeout(function(){t.innerHTML='';},3200);
+};
+
+// ── PAYMENT ───────────────────────────────────────────────────
+var PLANS={career_week:{amount:900,name:'My Pioneer — 1 Week',tool:'pioneer'},career_month:{amount:2700,name:'My Pioneer — 1 Month',tool:'pioneer'},finance_week:{amount:900,name:'My Rupi — 1 Week',tool:'rupi'},finance_month:{amount:2700,name:'My Rupi — 1 Month',tool:'rupi'},retail_week:{amount:9900,name:'Look Me — 2 Weeks',tool:'lookme'},retail_month:{amount:14400,name:'Look Me — 1 Month',tool:'lookme'},stocksense_week:{amount:900,name:'StockSense AI — 1 Week',tool:'stocksense'},stocksense_month:{amount:2700,name:'StockSense AI — 1 Month',tool:'stocksense'},taresitare_week:{amount:900,name:'Tare Sitare Basic — 1 Week',tool:'taresitare'},taresitare_month:{amount:2700,name:'Tare Sitare Basic — 1 Month',tool:'taresitare'},taresitare_prem:{amount:49900,name:'Tare Sitare Premium — 1 Month',tool:'taresitare'}};
+
+window.payNow=function(k){
+  var p=PLANS[k];if(!p){showToast('Plan not found','#F43F5E');return;}
+  showToast(p.name+' — Razorpay checkout opens on live site!','#F59E0B');
+};
+
+window.showSubModal=function(tk){
+  var defs={career:{week:'career_week',month:'career_month',wL:'₹9/week',mL:'₹27/month',icon:'⚡',title:'My Pioneer v5.0',color:'#8B5CF6'},finance:{week:'finance_week',month:'finance_month',wL:'₹9/week',mL:'₹27/month',icon:'💰',title:'My Rupi v6.0',color:'#10B981'},stocksense:{week:'stocksense_week',month:'stocksense_month',wL:'₹9/week',mL:'₹27/month',icon:'📈',title:'StockSense AI',color:'#F59E0B'},retail:{week:'retail_week',month:'retail_month',wL:'₹99/2wk',mL:'₹144/month',icon:'🛒',title:'Look Me v5.1',color:'#F43F5E'},taresitare:{week:'taresitare_week',month:'taresitare_month',wL:'₹9/week',mL:'₹27/month',icon:'🌟',title:'Tare Sitare Basic — JNVST',color:'#F59E0B'}};
+  var d=defs[tk];if(!d)return;
+  var ex=document.getElementById('_sub_modal');if(ex)ex.remove();
+  var modal=document.createElement('div');modal.id='_sub_modal';
+  modal.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:9999;display:flex;align-items:center;justify-content:center;padding:18px;backdrop-filter:blur(12px)';
+  modal.innerHTML='<div style="background:linear-gradient(160deg,#0e0e2a,#0a0a1a);border:1px solid rgba(245,158,11,.28);border-radius:20px;padding:1.6rem;max-width:340px;width:100%">'
+    +'<button onclick="document.getElementById(\'_sub_modal\').remove()" style="float:right;background:rgba(255,255,255,.07);border:none;border-radius:50%;width:24px;height:24px;color:rgba(240,244,255,.5);font-size:11px;cursor:pointer">✕</button>'
+    +'<div style="text-align:center;margin-bottom:1rem;clear:both"><div style="font-size:2.5rem;margin-bottom:5px">'+d.icon+'</div><div style="font-family:Playfair Display,serif;font-size:1.1rem;font-weight:900;color:'+d.color+'">'+d.title+'</div></div>'
+    +'<div id="_sw" style="background:rgba(245,158,11,.06);border:1px solid rgba(245,158,11,.18);border-radius:12px;padding:12px;cursor:pointer;margin-bottom:7px"><div style="display:flex;justify-content:space-between;align-items:center"><div><div style="font-size:12px;font-weight:700">Weekly</div><div style="font-size:9.5px;color:var(--dim)">7 days access</div></div><div style="font-size:1.2rem;font-weight:900;color:#F59E0B">'+d.wL+'</div></div></div>'
+    +'<div id="_sm" style="background:linear-gradient(135deg,rgba(245,158,11,.1),rgba(245,158,11,.04));border:2px solid rgba(245,158,11,.38);border-radius:12px;padding:12px;cursor:pointer;position:relative;margin-bottom:12px"><span style="position:absolute;top:-8px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#F59E0B,#D97706);color:#000;font-size:8px;font-weight:900;padding:1px 10px;border-radius:20px;white-space:nowrap">BEST VALUE</span><div style="display:flex;justify-content:space-between;align-items:center"><div><div style="font-size:12px;font-weight:700">Monthly</div><div style="font-size:9.5px;color:var(--dim)">30 days access</div></div><div style="font-size:1.2rem;font-weight:900;color:#F59E0B">'+d.mL+'</div></div></div>'
+    +'<div style="text-align:center;font-size:9px;color:rgba(240,244,255,.2)">🔒 Razorpay · GST Invoice · Cancel Anytime</div></div>';
+  document.body.appendChild(modal);
+  document.getElementById('_sw').addEventListener('click',function(){modal.remove();payNow(d.week);});
+  document.getElementById('_sm').addEventListener('click',function(){modal.remove();payNow(d.month);});
+  modal.addEventListener('click',function(e){if(e.target===modal)modal.remove();});
+};
+
+// ── HEALTH LIMIT ──────────────────────────────────────────────
+function todayKey(){return 'mk_h_'+new Date().toISOString().slice(0,10);}
+function hUsed(){return parseInt(localStorage.getItem(todayKey())||'0');}
+function hInc(){try{localStorage.setItem(todayKey(),hUsed()+1);}catch(e){}}
+function updateHBar(){
+  var used=hUsed(),left=Math.max(0,H_LIMIT-used),pct=Math.round(used/H_LIMIT*100);
+  var col=left<=2?'#F43F5E':left<=4?'#F59E0B':'#10B981';
+  var eu=document.getElementById('hl-used'),el=document.getElementById('hl-left'),ef=document.getElementById('hl-fill');
+  if(eu)eu.textContent=used;if(el)el.textContent=left;if(ef){ef.style.width=pct+'%';ef.style.background=col;}
+}
+function isHealthQ(t){return ['dosha','yoga','ayurved','pranayama','health','sehat','immunity','sleep','neend','🧬','🌿','🧘'].some(function(k){return t.toLowerCase().includes(k);});}
+
+// ── SYSTEM PROMPT (Munna — internal) ─────────────────────────
+function getMKSys(){
+  var tool=window._curTool||'dashboard';
+  var toolName={health:'My Health Is Wealth v6.0',pioneer:'My Pioneer v5.0',rupi:'My Rupi v6.0',lookme:'Look Me v5.1',stocksense:'StockSense AI',taresitare:'Tare Sitare AI v6',dash:'Meri Kashti Dashboard'}[tool]||'Meri Kashti';
+  var c=getMemberCount(),rem=Math.max(0,UNLOCK_TARGET-c);
+  return 'You are the Meri Kashti AI — a warm, sharp 🦜 companion on MeriKashti.ai. Like a knowledgeable older sibling: encouraging, never preachy, never salesy. Auto-detect user language: Hindi→Hindi, Hinglish→Hinglish, English→English.\n\nCURRENT TOOL: '+toolName+'\nMEMBER COUNT: '+c+'/1,000 ('+rem+' more needed to unlock StockSense AI)\n\nTOOLS:\n- My Health Is Wealth v6.0: Ayurveda, Yoga, Pranayama — FREE always (9 chats/day)\n- My Pioneer v5.0: Career coaching, interview simulator, APEX resume — ₹9/week\n- My Rupi v6.0: Financial literacy, EMI/SIP/Tax — ₹9/week\n- Tare Sitare: JNVST Class 6 exam prep — ₹9/week basic, ₹499/month premium\n- Look Me v5.1: Retail OS for kirana/SME — ₹99/2weeks, unlocks at 500 members\n- StockSense AI: LOCKED until 1,000 members. Currently '+c+' members.\n\nRESPONSE: 4-6 sentences max. Match language. Celebrate → Bridge → Suggest → Invite.';
+}
+
+// ── TOOL AI HELPER ──────────────────────────────────────────
+async function toolAI(sys,userMsg,resultEl,btnEl){
+  if(!resultEl)return;
+  if(btnEl)btnEl.disabled=true;
+  resultEl.classList.add('show');
+  resultEl.innerHTML='<div class="ai-bub"><span style="display:flex;gap:4px;align-items:center">'+'<span style="width:5px;height:5px;background:#F59E0B;border-radius:50%;animation:pulse 1s infinite;display:inline-block"></span>'.repeat(3)+'</span></div>';
+  try{
+    var res=await fetch('/.netlify/functions/chat',{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({messages:[{role:'user',content:userMsg}],system_override:sys})
+    });
+    if(res.status===404){
+      resultEl.innerHTML='<div class="ai-bub" style="color:#fca5a5">⚙️ <strong>Setup Required</strong><br><br>Netlify function deploy nahi hua. <code>netlify/functions/chat.js</code> ko repo mein add karo aur redeploy karo.</div>';
+      if(btnEl)btnEl.disabled=false; return;
+    }
+    var d=await res.json();
+    if(!res.ok){
+      var em=(d&&d.error&&(d.error.message||d.error))||'';
+      if((''+em).toLowerCase().includes('key')||(''+em).toLowerCase().includes('auth')){
+        resultEl.innerHTML='<div class="ai-bub" style="color:#fca5a5">🔑 <strong>API Key Issue</strong><br><br>Netlify → Site Settings → Environment Variables mein <code>ANTHROPIC_API_KEY</code> check karo.</div>';
+      } else {
+        resultEl.innerHTML='<div class="ai-bub" style="color:#fca5a5">⚠️ Server error: '+escH(''+em)+'</div>';
+      }
+      if(btnEl)btnEl.disabled=false; return;
+    }
+    var text=d.content&&d.content[0]?d.content[0].text:'';
+    if(!text){text='No response received. Try again.';}
+    resultEl.innerHTML='<div class="ai-bub">'+text.replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>').replace(/\n/g,'<br>')+'</div>';
+  }catch(e){
+    resultEl.innerHTML='<div class="ai-bub" style="color:#fca5a5">📡 <strong>Network Error</strong><br>'+escH(e.message)+'</div>';
+  }
+  if(btnEl)btnEl.disabled=false;
+}
+
+// ── TOOLS ─────────────────────────────────────────────────────
+function initTool_health(){
+  var body=document.getElementById('health-body');if(!body)return;
+  var used=hUsed(),left=Math.max(0,H_LIMIT-used);
+  body.innerHTML='<div style="background:linear-gradient(135deg,rgba(56,189,248,.08),rgba(16,185,129,.04));border:1px solid rgba(56,189,248,.18);border-radius:16px;padding:14px 16px;margin-bottom:12px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px">'
+    +'<div><div style="font-family:Playfair Display,serif;font-size:1rem;font-weight:900;color:#38BDF8">My Health is Wealth v6.0</div><div style="font-size:10px;color:var(--sub);margin-top:2px">Ayurveda · Yoga · Pranayama · 10 Modalities · Always FREE</div></div>'
+    +'<div style="text-align:right"><div style="font-size:9.5px;color:var(--sub)">Daily: <span id="hl-used">'+used+'</span>/9</div><div style="width:80px;height:4px;background:rgba(255,255,255,.07);border-radius:2px;margin-top:3px;overflow:hidden"><div id="hl-fill" style="height:100%;border-radius:2px;width:'+Math.round(used/H_LIMIT*100)+'%;background:'+(left<=2?'#F43F5E':left<=4?'#F59E0B':'#10B981')+'"></div></div><div style="font-size:8.5px;color:var(--dim);margin-top:1px"><span id="hl-left">'+left+'</span> left</div></div></div>'
+    +'<div class="feat-grid">'
+    +[{ic:'🧬',t:'Dosha Assessment',d:'Vata-Pitta-Kapha constitution',k:'dosha'},{ic:'🧘',t:'Yoga Session',d:'Personalized asana sequence',k:'yoga'},{ic:'💨',t:'Pranayama Guide',d:'Breathwork for energy & calm',k:'prana'},{ic:'🌿',t:'Ayurvedic Remedies',d:'Natural healing for common ailments',k:'ayur'},{ic:'🌙',t:'Sleep & Recovery',d:'Dinacharya for better sleep',k:'sleep'},{ic:'🛡️',t:'Immunity Boost',d:'Seasonal health protocols',k:'imm'}].map(function(f){
+      return '<div class="feat-card" onclick="hlFeature(\''+f.k+'\')" style="border-color:rgba(56,189,248,.15)"><span class="feat-ic">'+f.ic+'</span><div class="feat-title">'+f.t+'</div><div class="feat-desc">'+f.d+'</div><div style="font-size:10.5px;color:#38BDF8;font-weight:600">Ask AI →</div></div>';
+    }).join('')+'</div>'
+    +'<div class="panel-box" style="margin-top:10px"><h3>🤖 Personal Health AI</h3><textarea class="mk-inp" id="hl-q" rows="2" placeholder="Kuch bhi poochho — dosha, yoga, diet... (Hindi/English/Hinglish)"></textarea><button class="run-btn" id="hl-btn" style="background:linear-gradient(135deg,#38BDF8,#0EA5E9);color:#000" onclick="hlAsk()">Ask Health AI →</button><div class="ai-result" id="hl-result"></div></div>'
+    +'<div style="text-align:center;font-size:9px;color:var(--dim);margin-top:8px;padding:7px;background:rgba(255,255,255,.02);border-radius:7px">⚕️ Educational wellness guidance only · For emergencies consult a doctor</div>';
+  var HQ={dosha:'Mera Ayurvedic dosha kya hai? Mujhe 3 quick questions poochho Vata-Pitta-Kapha identify karne ke liye.',yoga:'Mujhe aaj ke liye ek beginner yoga sequence do — 20 minutes, step by step.',prana:'Pranayama ki top 3 techniques batao — stress aur energy ke liye.',ayur:'Common ailments ke liye top Ayurvedic home remedies batao — acidity, cold, headache.',sleep:'Raat ko achhi neend ke liye Ayurvedic dinacharya routine batao.',imm:'Immunity boost karne ke liye seasonal Ayurvedic protocols batao.'};
+  window.hlFeature=function(k){var ta=document.getElementById('hl-q');if(ta){ta.value=HQ[k]||'';hlAsk();}};
+  window.hlAsk=async function(){
+    var q=(document.getElementById('hl-q')||{}).value||'';if(!q.trim())return;
+    if(hUsed()>=H_LIMIT){showToast('Daily limit (9) reached. Kal reset hoga 🌅','#F43F5E');return;}
+    hInc();updateHBar();
+    await toolAI('You are an expert Ayurvedic practitioner and holistic wellness coach for My Health is Wealth v6.0 on MeriKashti.ai. Respond in user\'s language (Hindi/Hinglish/English). Give practical, safe wellness guidance. Use **bold** for key points. End with: "⚕️ For serious conditions, consult a qualified doctor." Max 200 words.',q,document.getElementById('hl-result'),document.getElementById('hl-btn'));
+  };
+}
+
+function initTool_pioneer(){
+  var body=document.getElementById('pioneer-body');if(!body)return;
+  body.innerHTML='<div style="background:linear-gradient(135deg,rgba(139,92,246,.1),rgba(99,102,241,.04));border:1px solid rgba(139,92,246,.22);border-radius:16px;padding:14px 16px;margin-bottom:12px"><div style="font-family:Playfair Display,serif;font-size:1rem;font-weight:900;color:#8B5CF6">My Pioneer v5.0</div><div style="font-size:10px;color:var(--sub);margin-top:2px">Mirror Method 2.0 · APEX ATS Resume · 32 Global Job Portals · ₹9/week</div></div>'
+    +'<div class="feat-grid">'
+    +[{ic:'🎤',t:'Mirror Method 2.0',d:'AI interview simulator — STAR method',k:'interview'},{ic:'📄',t:'APEX Resume Builder',d:'ATS-optimized with AI scoring',k:'resume'},{ic:'🌐',t:'32 Job Portals',d:'Naukri, LinkedIn, Indeed & 29 more',k:'jobs'},{ic:'💰',t:'Salary Negotiation',d:'Know your market value',k:'salary'},{ic:'🏢',t:'Company Research',d:'Pre-interview deep-dive',k:'company'},{ic:'📈',t:'90-Day Career Plan',d:'Skill to offer letter roadmap',k:'roadmap'}].map(function(f){
+      return '<div class="feat-card" onclick="piFeature(\''+f.k+'\')" style="border-color:rgba(139,92,246,.15)"><span class="feat-ic">'+f.ic+'</span><div class="feat-title">'+f.t+'</div><div class="feat-desc">'+f.d+'</div><div style="font-size:10.5px;color:#8B5CF6;font-weight:600">Start →</div></div>';
+    }).join('')+'</div>'
+    +'<div class="panel-box" style="margin-top:10px"><h3>⚡ Career AI Coach</h3><input class="mk-inp" id="pi-role" placeholder="Target role (e.g. Supply Chain Manager, Software Engineer)"><textarea class="mk-inp" id="pi-q" rows="2" placeholder="Interview question ya career sawaal... (Hindi/English/Hinglish)"></textarea><button class="run-btn" id="pi-btn" style="background:linear-gradient(135deg,#8B5CF6,#6D28D9);color:#fff" onclick="piAsk()">Coach Me →</button><div class="ai-result" id="pi-result"></div></div>';
+  var PQ={interview:'Mujhe ek STAR-method behavioral mock interview karo — ek question poochho aur mera answer evaluate karo.',resume:'Mera resume ATS-friendly kaise banayein? Key sections, keywords aur format tips do.',jobs:'India mein top 10 job portals kaunse hain? Effectively kaise use karein?',salary:'Salary negotiation ke liye exact scripts aur tactics do.',company:'Pre-interview company research karne ka complete framework batao.',roadmap:'Mujhe 90-day career roadmap banao — current skills se dream job tak.'};
+  window.piFeature=function(k){var ta=document.getElementById('pi-q');if(ta){ta.value=PQ[k]||'';piAsk();}};
+  window.piAsk=async function(){
+    var role=(document.getElementById('pi-role')||{}).value||'professional';
+    var q=(document.getElementById('pi-q')||{}).value||'';if(!q.trim())return;
+    await toolAI('You are an expert career coach for My Pioneer v5.0 on MeriKashti.ai. Target role: '+role+'. Respond in user\'s language (Hindi/Hinglish/English). Use Mirror Method — STAR framework. **Bold** key points. Max 250 words.',q,document.getElementById('pi-result'),document.getElementById('pi-btn'));
+  };
+}
+
+function initTool_rupi(){
+  var body=document.getElementById('rupi-body');if(!body)return;
+  body.innerHTML='<div style="background:linear-gradient(135deg,rgba(16,185,129,.1),rgba(20,184,166,.04));border:1px solid rgba(16,185,129,.22);border-radius:16px;padding:14px 16px;margin-bottom:12px"><div style="font-family:Playfair Display,serif;font-size:1rem;font-weight:900;color:#10B981">My Rupi v6.0</div><div style="font-size:10px;color:var(--sub);margin-top:2px">33 Lessons · 7 AI Mentors · EMI/SIP/Tax · ₹9/week</div></div>'
+    +'<div class="panel-box"><h3>🧮 EMI Calculator</h3>'
+    +'<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">'
+    +'<div><label style="font-size:9px;color:var(--sub);display:block;margin-bottom:2px">Loan Amount (₹)</label><input class="mk-inp" id="ru-p" type="number" placeholder="500000" style="margin:0"></div>'
+    +'<div><label style="font-size:9px;color:var(--sub);display:block;margin-bottom:2px">Rate (% p.a.)</label><input class="mk-inp" id="ru-r" type="number" placeholder="8.5" style="margin:0"></div>'
+    +'<div><label style="font-size:9px;color:var(--sub);display:block;margin-bottom:2px">Tenure (Months)</label><input class="mk-inp" id="ru-n" type="number" placeholder="60" style="margin:0"></div>'
+    +'<div><label style="font-size:9px;color:var(--sub);display:block;margin-bottom:2px">Loan Type</label><select class="mk-inp" id="ru-lt" style="margin:0"><option>Home Loan</option><option>Car Loan</option><option>Personal Loan</option><option>Education Loan</option></select></div>'
+    +'</div>'
+    +'<div style="display:flex;gap:6px;margin-top:7px"><button class="run-btn" style="background:linear-gradient(135deg,#10B981,#059669);color:#fff;flex:1" onclick="ruCalcEMI()">Calculate →</button><button class="run-btn" id="ru-ai-btn" style="background:rgba(16,185,129,.07);border:1px solid rgba(16,185,129,.22);color:#10B981;flex:1" onclick="ruAIAdvice()">🤖 AI Advice</button></div>'
+    +'<div id="ru-emi-res" style="display:none;margin-top:9px;background:rgba(16,185,129,.05);border:1px solid rgba(16,185,129,.13);border-radius:9px;padding:11px">'
+    +'<div style="display:grid;grid-template-columns:1fr 1fr;gap:7px;font-size:12px">'
+    +'<div><div style="font-size:9px;color:var(--sub)">Monthly EMI</div><div style="font-size:1.3rem;font-weight:900;color:#10B981" id="ru-emi-v">—</div></div>'
+    +'<div><div style="font-size:9px;color:var(--sub)">Total Interest</div><div style="font-size:1.3rem;font-weight:900;color:#F59E0B" id="ru-int-v">—</div></div>'
+    +'<div><div style="font-size:9px;color:var(--sub)">Total Payment</div><div style="font-weight:700" id="ru-tot-v">—</div></div>'
+    +'<div><div style="font-size:9px;color:var(--sub)">Interest %</div><div style="font-weight:700;color:#F43F5E" id="ru-rat-v">—</div></div>'
+    +'</div></div>'
+    +'<div class="ai-result" id="ru-emi-result"></div></div>'
+    +'<div class="panel-box"><h3>💡 AI Financial Mentor</h3><textarea class="mk-inp" id="ru-q" rows="2" placeholder="Savings, SIP, tax, budget, insurance... (Hindi/English/Hinglish)"></textarea><button class="run-btn" id="ru-btn" style="background:linear-gradient(135deg,#10B981,#059669);color:#fff" onclick="ruAsk()">Ask Mentor →</button><div class="ai-result" id="ru-result"></div></div>';
+  window.ruCalcEMI=function(){
+    var P=parseFloat((document.getElementById('ru-p')||{}).value)||0,R=parseFloat((document.getElementById('ru-r')||{}).value)||0,N=parseFloat((document.getElementById('ru-n')||{}).value)||0;
+    if(!P||!R||!N){showToast('Teeno fields bharein!','#F43F5E');return;}
+    var r=(R/100)/12,emi=P*r*Math.pow(1+r,N)/(Math.pow(1+r,N)-1);
+    var total=emi*N,interest=total-P;
+    var fmt=function(v){return '₹'+Math.round(v).toLocaleString('en-IN');};
+    document.getElementById('ru-emi-v').textContent=fmt(emi);document.getElementById('ru-int-v').textContent=fmt(interest);
+    document.getElementById('ru-tot-v').textContent=fmt(total);document.getElementById('ru-rat-v').textContent=((interest/P)*100).toFixed(1)+'%';
+    document.getElementById('ru-emi-res').style.display='block';
+  };
+  window.ruAIAdvice=async function(){
+    var P=(document.getElementById('ru-p')||{}).value||'',R=(document.getElementById('ru-r')||{}).value||'',N=(document.getElementById('ru-n')||{}).value||'',lt=(document.getElementById('ru-lt')||{}).value||'';
+    if(!P||!R||!N){showToast('Pehle EMI calculate karo!','#F43F5E');return;}
+    await toolAI('You are a friendly Indian financial literacy mentor for My Rupi v6.0 on MeriKashti.ai. Practical advice for middle-class Indians. **Bold** key numbers. Hinglish. Max 180 words.',lt+' loan advice: Principal=₹'+P+', Rate='+R+'%, Tenure='+N+' months. Affordable? Tips to reduce interest?',document.getElementById('ru-emi-result'),document.getElementById('ru-ai-btn'));
+  };
+  window.ruAsk=async function(){
+    var q=(document.getElementById('ru-q')||{}).value||'';if(!q.trim())return;
+    await toolAI('You are a friendly Indian financial mentor for My Rupi v6.0 on MeriKashti.ai. 7 mentor personalities: Savings Guru, Investment Mentor, Tax Expert, Budget Coach, Debt Destroyer, Wealth Builder, Insurance Advisor. User language auto-detect. Practical advice. **Bold** key figures. SEBI disclaimer if investment advice. Max 250 words.',q,document.getElementById('ru-result'),document.getElementById('ru-btn'));
+  };
+}
+
+function initTool_taresitare(){
+  var body=document.getElementById('taresitare-body');if(!body)return;
+  body.innerHTML='<div style="background:linear-gradient(135deg,rgba(245,158,11,.1),rgba(249,115,22,.04));border:1px solid rgba(245,158,11,.22);border-radius:16px;padding:14px 16px;margin-bottom:12px"><div style="font-family:Playfair Display,serif;font-size:1rem;font-weight:900;color:#F59E0B">Tare Sitare ✦ AI v6</div><div style="font-size:10px;color:var(--sub);margin-top:2px">JNVST Class 6 Exam Prep · 150-Day Syllabus · ₹9/week basic, ₹499/mo premium</div></div>'
+    +'<div class="feat-grid">'
+    +[{ic:'📚',t:'150-Day Syllabus',d:'5 phases, structured prep',k:'syllabus'},{ic:'📝',t:'Mock Test',k:'mock',d:'5 AI test modes'},{ic:'🧠',t:'Lesson Studio',d:'70+ topics explained simply',k:'lesson'},{ic:'🏆',t:'Achievements',d:'10-level gamified progress',k:'ach'}].map(function(f){
+      return '<div class="feat-card" onclick="tsFeature(\''+f.k+'\')" style="border-color:rgba(245,158,11,.15)"><span class="feat-ic">'+f.ic+'</span><div class="feat-title">'+f.t+'</div><div class="feat-desc">'+f.d+'</div><div style="font-size:10.5px;color:#F59E0B;font-weight:600">Ask AI →</div></div>';
+    }).join('')+'</div>'
+    +'<div class="panel-box" style="margin-top:10px"><h3>🤖 Tare Sitare AI Tutor</h3><textarea class="mk-inp" id="ts-q" rows="2" placeholder="JNVST syllabus, maths doubt, mock test... (Hindi/English/Hinglish)"></textarea><button class="run-btn" id="ts-btn" style="background:linear-gradient(135deg,#F59E0B,#D97706);color:#000" onclick="tsAsk()">Ask Tutor →</button><div class="ai-result" id="ts-result"></div></div>';
+  var TQ={syllabus:'JNVST Class 6 ka 150-day syllabus plan batao — phase wise.',mock:'Mujhe ek JNVST mock test question do — Mental Ability se.',lesson:'JNVST ke important topics kya hain? List karo.',ach:'Mera progress kaise track hota hai is platform pe?'};
+  window.tsFeature=function(k){var ta=document.getElementById('ts-q');if(ta){ta.value=TQ[k]||'';tsAsk();}};
+  window.tsAsk=async function(){
+    var q=(document.getElementById('ts-q')||{}).value||'';if(!q.trim())return;
+    await toolAI('You are an expert JNVST (Jawahar Navodaya Vidyalaya) Class 6 exam tutor for Tare Sitare AI v6 on MeriKashti.ai. Cover Mental Ability, Arithmetic, Language sections. Respond in user\'s language. Use **bold** for key points. Encouraging tone for a 10-11 year old child or their parent. Max 200 words.',q,document.getElementById('ts-result'),document.getElementById('ts-btn'));
+  };
+}
+
+// ── LOOK ME (kept minimal, loads on unlock) ───────────────────
+function initLookMe(){
+  var container=document.getElementById('lookme-app');if(!container)return;
+  container.style.marginLeft = window.innerWidth<=860 ? '0' : '230px';
+  var lmCSS='<style>#lm{display:flex;height:100%;overflow:hidden}#lmsb{width:190px;background:rgba(7,13,36,.97);border-right:1px solid rgba(255,255,255,.07);display:flex;flex-direction:column;flex-shrink:0;overflow-y:auto}.lmsec{font-size:8.5px;color:rgba(240,244,255,.22);text-transform:uppercase;letter-spacing:1px;padding:10px 10px 3px;font-weight:700}.lmni{display:flex;align-items:center;gap:7px;padding:6px 10px;border-radius:7px;cursor:pointer;color:rgba(240,244,255,.5);font-size:11.5px;font-weight:500;border:1px solid transparent;margin:1px 4px;transition:all .14s}.lmni:hover{background:rgba(255,255,255,.05);color:#f0f4ff}.lmni.on{background:rgba(245,158,11,.08);color:#f59e0b;border-color:rgba(245,158,11,.13)}#lmmain{flex:1;display:flex;flex-direction:column;overflow:hidden}#lmtb{background:rgba(4,7,26,.9);border-bottom:1px solid rgba(255,255,255,.07);padding:0 14px;height:44px;display:flex;align-items:center;gap:7px;flex-shrink:0}#lmtbt{font-size:13px;font-weight:800;flex:1}#lmcnt{flex:1;overflow-y:auto;padding:12px}.lmsg{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:11px}.lmsc{border-radius:10px;padding:10px 12px}.lmsc.gd{border:1px solid rgba(245,158,11,.18);background:linear-gradient(135deg,rgba(245,158,11,.1),rgba(249,115,22,.04))}.lmsc.pu{border:1px solid rgba(139,92,246,.18);background:linear-gradient(135deg,rgba(139,92,246,.1),rgba(99,102,241,.04))}.lmsc.gn{border:1px solid rgba(16,185,129,.18);background:linear-gradient(135deg,rgba(16,185,129,.08),rgba(20,184,166,.03))}.lmsc.rd{border:1px solid rgba(239,68,68,.18);background:linear-gradient(135deg,rgba(239,68,68,.08),rgba(220,38,38,.03))}.lmsl{font-size:8.5px;color:rgba(240,244,255,.5);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px;font-weight:600}.lmsv{font-size:18px;font-weight:900;letter-spacing:-1px;line-height:1;margin-bottom:2px}.lmsc.gd .lmsv{background:linear-gradient(135deg,#f59e0b,#f97316);-webkit-background-clip:text;-webkit-text-fill-color:transparent}.lmsc.pu .lmsv{background:linear-gradient(135deg,#8b5cf6,#6366f1);-webkit-background-clip:text;-webkit-text-fill-color:transparent}.lmsc.gn .lmsv{color:#34d399}.lmsc.rd .lmsv{color:#f87171}.lmss{font-size:9px;color:rgba(240,244,255,.48)}.lmbrf{background:linear-gradient(135deg,rgba(245,158,11,.07),rgba(249,115,22,.02));border:1px solid rgba(245,158,11,.13);border-radius:10px;padding:11px 13px;margin-bottom:10px}.lmbfh{font-size:8.5px;font-weight:800;background:linear-gradient(135deg,#f59e0b,#f97316);-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-transform:uppercase;letter-spacing:.6px;margin-bottom:5px}.lmbft{font-size:11.5px;color:#f0f4ff;line-height:1.7}.lmbt{padding:5px 11px;border-radius:7px;font-size:11px;font-weight:600;cursor:pointer;border:none;display:inline-flex;align-items:center;gap:4px;font-family:Inter,sans-serif;min-height:28px}.lmbg{background:linear-gradient(135deg,#f59e0b,#d97706);color:#000;font-weight:800}.lmbo{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.07);color:#f0f4ff}.lmtw{overflow-x:auto}.lmtw table{width:100%;border-collapse:collapse;font-size:10.5px}.lmtw th{padding:6px 9px;text-align:left;color:rgba(240,244,255,.45);font-weight:600;font-size:8px;text-transform:uppercase;border-bottom:1px solid rgba(255,255,255,.07)}.lmtw td{padding:6px 9px;border-bottom:1px solid rgba(255,255,255,.04);color:#f0f4ff}.lmchip{display:inline-flex;align-items:center;padding:1px 5px;border-radius:20px;font-size:8px;font-weight:700}.lmok{background:rgba(16,185,129,.1);color:#34d399;border:1px solid rgba(16,185,129,.18)}.lmwn{background:rgba(245,158,11,.1);color:#f59e0b;border:1px solid rgba(245,158,11,.18)}.lmcg{background:rgba(239,68,68,.1);color:#f87171;border:1px solid rgba(239,68,68,.18)}.lmcard{background:linear-gradient(135deg,rgba(255,255,255,.04),rgba(255,255,255,.01));border:1px solid rgba(255,255,255,.07);border-radius:12px;overflow:hidden;margin-bottom:10px}.lmch{padding:9px 13px;border-bottom:1px solid rgba(255,255,255,.06);display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,.02)}.lmct{font-size:12px;font-weight:700}.lmfg{margin-bottom:8px}.lmfl{font-size:8.5px;color:rgba(240,244,255,.5);text-transform:uppercase;letter-spacing:.4px;margin-bottom:2px;display:block;font-weight:700}.lmsi{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.07);border-radius:6px;padding:7px 9px;color:#f0f4ff;font-size:11.5px;outline:none;font-family:Inter,sans-serif;min-height:34px}.lmsi:focus{border-color:rgba(245,158,11,.45)}.lmsi::placeholder{color:rgba(240,244,255,.28)}select.lmsi{cursor:pointer;appearance:none}.lmma{display:flex;gap:5px;margin-top:10px;flex-wrap:wrap}</style>';
+  var lmNav=[{sec:'DASHBOARD',items:[{ic:'📊',l:'Overview',k:'overview'},{ic:'📈',l:'Sales',k:'sales'}]},{sec:'BILLING',items:[{ic:'🧾',l:'New Bill',k:'billing'},{ic:'📋',l:'History',k:'history'}]},{sec:'INVENTORY',items:[{ic:'📦',l:'Stock',k:'stock'},{ic:'⚠️',l:'Alerts',k:'alerts'}]},{sec:'FINANCE',items:[{ic:'💳',l:'Udhaar',k:'udhaar'},{ic:'📑',l:'GST',k:'gst'}]},{sec:'AI',items:[{ic:'🤖',l:'AI Munshi',k:'munshi'}]}];
+  container.innerHTML=lmCSS+'<div id="lm"><div id="lmsb">'+lmNav.map(function(g){return '<div class="lmsec">'+g.sec+'</div>'+g.items.map(function(i){return '<div class="lmni" id="lmni-'+i.k+'" onclick="lmNav(\''+i.k+'\')">'+i.ic+' '+i.l+'</div>';}).join('');}).join('')+'</div><div id="lmmain"><div id="lmtb"><div id="lmtbt">📊 Overview</div><button class="lmbt lmbg" onclick="lmNav(\'billing\')">+ Bill</button></div><div id="lmcnt"></div></div></div>';
+  var panels={
+    overview:'<div class="lmsg"><div class="lmsc gd"><div class="lmsl">Revenue</div><div class="lmsv">₹4,820</div><div class="lmss">↑12% today</div></div><div class="lmsc pu"><div class="lmsl">Bills</div><div class="lmsv">23</div><div class="lmss">Avg ₹209</div></div><div class="lmsc gn"><div class="lmsl">Stock Items</div><div class="lmsv">148</div><div class="lmss">12 low</div></div><div class="lmsc rd"><div class="lmsl">Udhaar</div><div class="lmsv">₹2,340</div><div class="lmss">7 customers</div></div></div><div class="lmbrf"><div class="lmbfh">🤖 AI Munshi</div><div class="lmbft">Aaj revenue 12% upar. Parle-G aur Amul Milk ka stock critical — reorder karo. Ramesh Ji ka ₹640 udhaar pending hai.</div></div><div class="lmcard"><div class="lmch"><div class="lmct">Recent Transactions</div></div><div class="lmtw"><table><thead><tr><th>Item</th><th>Qty</th><th>Amt</th><th>Mode</th><th>Status</th></tr></thead><tbody><tr><td>Parle-G 5kg</td><td>10</td><td>₹450</td><td>UPI</td><td><span class="lmchip lmok">Paid</span></td></tr><tr><td>Tata Salt 1kg</td><td>5</td><td>₹95</td><td>Cash</td><td><span class="lmchip lmok">Paid</span></td></tr><tr><td>Ariel 1kg</td><td>3</td><td>₹678</td><td>Udhaar</td><td><span class="lmchip lmwn">Pending</span></td></tr></tbody></table></div></div>',
+    billing:'<div class="lmcard"><div class="lmch"><div class="lmct">New Bill</div></div><div style="padding:11px"><div class="lmfg"><label class="lmfl">Customer</label><input class="lmsi" id="lm-cust" placeholder="Name ya phone"></div><div class="lmfg"><label class="lmfl">Item</label><input class="lmsi" id="lm-item" placeholder="Item name"></div><div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:5px;margin-bottom:8px"><div><label class="lmfl">Qty</label><input class="lmsi" id="lm-qty" type="number" placeholder="1"></div><div><label class="lmfl">Price ₹</label><input class="lmsi" id="lm-price" type="number" placeholder="0"></div><div><label class="lmfl">GST%</label><select class="lmsi" id="lm-gst"><option value="0">0%</option><option value="5">5%</option><option value="12">12%</option><option value="18">18%</option></select></div></div><div class="lmma"><button class="lmbt lmbg" onclick="lmCalcBill()">Calculate</button></div><div id="lm-bill-result" style="display:none;margin-top:9px;background:rgba(245,158,11,.05);border:1px solid rgba(245,158,11,.13);border-radius:9px;padding:10px;font-size:11.5px"></div></div></div>',
+    stock:'<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px">'+[{n:'Parle-G 5kg',s:8,m:20,c:'crit'},{n:'Tata Salt 1kg',s:45,m:50,c:'good'},{n:'Maggi 12pk',s:3,m:15,c:'crit'},{n:'Ariel 1kg',s:12,m:20,c:'low'},{n:'Amul Milk',s:5,m:30,c:'crit'}].map(function(i){var pct=Math.round(i.s/i.m*100);return '<div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-left:3px solid '+(i.c==='crit'?'#ef4444':i.c==='low'?'#f59e0b':'#10b981')+';border-radius:10px;padding:10px"><div style="font-size:11px;font-weight:600;margin-bottom:3px">'+i.n+'</div><div style="height:4px;background:rgba(255,255,255,.07);border-radius:2px;margin:3px 0;overflow:hidden"><div style="height:100%;width:'+pct+'%;background:'+(i.c==='crit'?'#ef4444':i.c==='low'?'#f59e0b':'#10b981')+';border-radius:2px"></div></div><div style="font-size:9px;color:rgba(240,244,255,.45);display:flex;justify-content:space-between"><span>'+i.s+' units</span><span>Min:'+i.m+'</span></div></div>';}).join('')+'</div>',
+    udhaar:'<div class="lmcard"><div class="lmch"><div class="lmct">Udhaar Ledger</div><div style="font-size:11px;color:#f59e0b;font-weight:700">Total: ₹2,340</div></div><div class="lmtw"><table><thead><tr><th>Customer</th><th>Amount</th><th>Due</th><th>Status</th></tr></thead><tbody><tr><td>Ramesh Sharma</td><td style="font-weight:700">₹640</td><td>3 days</td><td><span class="lmchip lmwn">Pending</span></td></tr><tr><td>Sunita Devi</td><td style="font-weight:700">₹280</td><td>1 week</td><td><span class="lmchip lmwn">Pending</span></td></tr><tr><td>Mohan Lal</td><td style="font-weight:700">₹1,120</td><td>12 days</td><td><span class="lmchip lmcg">Overdue</span></td></tr></tbody></table></div></div>',
+    gst:'<div class="lmbrf"><div class="lmbfh">GST Summary — This Month</div><div class="lmbft">Total Sales: ₹1,24,800 | CGST: ₹3,744 | SGST: ₹3,744 | Net Payable: ₹7,488</div></div>',
+    alerts:'<div class="lmbrf" style="border-color:rgba(239,68,68,.2)"><div class="lmbfh" style="color:#f87171">⚠️ 5 Critical Items</div><div class="lmbft">Parle-G (8 bags), Amul Milk (5), Maggi (3) — reorder immediately!</div></div>',
+    history:'<div class="lmcard"><div class="lmch"><div class="lmct">Bill History</div></div><div class="lmtw"><table><thead><tr><th>#</th><th>Customer</th><th>Amount</th><th>Date</th></tr></thead><tbody><tr><td>#1023</td><td>Ramesh</td><td>₹840</td><td>Today 7:42 PM</td></tr><tr><td>#1022</td><td>Walk-in</td><td>₹234</td><td>Today 6:15 PM</td></tr></tbody></table></div></div>',
+    sales:'<div class="lmsg"><div class="lmsc gd"><div class="lmsl">Today</div><div class="lmsv">₹4,820</div><div class="lmss">23 bills</div></div><div class="lmsc gn"><div class="lmsl">This Week</div><div class="lmsv">₹28,450</div><div class="lmss">141 bills</div></div><div class="lmsc pu"><div class="lmsl">Month</div><div class="lmsv">₹1.24L</div><div class="lmss">612 bills</div></div><div class="lmsc rd"><div class="lmsl">Avg Bill</div><div class="lmsv">₹203</div><div class="lmss">All time</div></div></div>',
+    munshi:'<div class="lmbrf"><div class="lmbfh">🤖 AI Munshi</div><div class="lmbft">Aapka dukaan ka AI brain hoon! Stock, billing, GST, pricing — kuch bhi poochho.</div></div><div class="lmfg"><textarea class="lmsi" id="lm-q" style="min-height:55px" placeholder="Stock reorder, GST filing, pricing advice..."></textarea></div><div class="lmma"><button class="lmbt lmbg" onclick="lmAsk()">Ask Munshi →</button></div><div id="lm-munshi-res" style="display:none;margin-top:9px;background:rgba(245,158,11,.04);border:1px solid rgba(245,158,11,.1);border-radius:9px;padding:10px;font-size:11.5px;line-height:1.7;color:#f0f4ff"></div>'
+  };
+  var titles={overview:'📊 Dashboard Overview',billing:'🧾 New Bill',history:'📋 Bill History',stock:'📦 Stock Manager',alerts:'⚠️ Low Stock Alerts',udhaar:'💳 Udhaar Ledger',gst:'📑 GST Reports',munshi:'🤖 AI Munshi',sales:'📈 Sales Analytics'};
+  window.lmNav=function(k){
+    document.querySelectorAll('.lmni').forEach(function(n){n.classList.remove('on');});
+    var ni=document.getElementById('lmni-'+k);if(ni)ni.classList.add('on');
+    var tb=document.getElementById('lmtbt');if(tb)tb.textContent=titles[k]||k;
+    var cnt=document.getElementById('lmcnt');if(cnt)cnt.innerHTML=panels[k]||'<div style="padding:16px;color:var(--sub)">Coming soon...</div>';
+  };
+  window.lmCalcBill=function(){
+    var item=(document.getElementById('lm-item')||{}).value||'Item';
+    var qty=parseFloat((document.getElementById('lm-qty')||{}).value)||1;
+    var price=parseFloat((document.getElementById('lm-price')||{}).value)||0;
+    var gst=parseFloat((document.getElementById('lm-gst')||{}).value)||0;
+    var sub=qty*price,tax=sub*(gst/100),total=sub+tax;
+    var fmt=function(v){return '₹'+v.toFixed(2);};
+    var res=document.getElementById('lm-bill-result');if(!res)return;
+    res.style.display='block';
+    res.innerHTML='<div style="font-weight:700;margin-bottom:5px;color:#f59e0b">Bill Summary</div><div style="display:flex;justify-content:space-between;padding:2px 0;border-bottom:1px solid rgba(255,255,255,.05)"><span>'+item+' x'+qty+'</span><span>'+fmt(sub)+'</span></div>'+(gst?'<div style="display:flex;justify-content:space-between;padding:2px 0;border-bottom:1px solid rgba(255,255,255,.05)"><span>GST '+gst+'%</span><span>'+fmt(tax)+'</span></div>':'')+'<div style="display:flex;justify-content:space-between;padding:5px 0;font-weight:800"><span>Total</span><span style="color:#10b981">'+fmt(total)+'</span></div>';
+  };
+  window.lmAsk=async function(){
+    var q=(document.getElementById('lm-q')||{}).value||'';if(!q.trim())return;
+    var res=document.getElementById('lm-munshi-res');if(!res)return;
+    var btn=document.querySelector('.lmma .lmbt');if(btn)btn.disabled=true;
+    res.style.display='block';res.textContent='🤖 Soch raha hoon...';
+    await toolAI('You are AI Munshi — intelligent business assistant for Look Me v5.1 on MeriKashti.ai. Help Indian kirana/SME owners with billing, GST, inventory, udhaar, WhatsApp commerce. Hinglish. **Bold** key advice. Max 180 words.',q,res,btn);
+  };
+  lmNav('overview');
+}
+
+// ── STOCKSENSE — LOCKED / ACTIVE ─────────────────────────────
+function initStockSense(){
+  var body=document.getElementById('ss-body');if(!body)return;
+  var unlocked=isSSUnlocked();
+  var count=getMemberCount();
+  var remaining=Math.max(0,UNLOCK_TARGET-count);
+  var pct=Math.min(100,Math.round(count/UNLOCK_TARGET*100));
+  updateSSUI();
+
+  if(!unlocked){
+    body.innerHTML='<div class="ss-locked-screen">'
+      +'<div class="ss-lock-icon">🔒</div>'
+      +'<h2 style="font-family:Playfair Display,serif;font-size:1.6rem;font-weight:900;margin-bottom:.5rem">StockSense AI</h2>'
+      +'<p style="font-size:.85rem;color:var(--sub);max-width:380px;margin:0 auto .5rem;line-height:1.7">Indian market intelligence, intraday picks, big money flow detection, candle psychology — coming soon when the community reaches 1,000 members!</p>'
+      +'<div class="ss-counter-ring">'
+        +'<div class="ss-count-num" id="ss-ring-count">'+count.toLocaleString('en-IN')+'</div>'
+        +'<div class="ss-count-lbl">members</div>'
+      +'</div>'
+      +'<div class="ss-prog-wrap">'
+        +'<div style="display:flex;justify-content:space-between;font-size:.72rem;color:var(--sub);margin-bottom:.4rem"><span>'+count.toLocaleString('en-IN')+' joined</span><span>Goal: 1,000</span></div>'
+        +'<div class="ss-prog-bar"><div class="ss-prog-fill" id="ss-prog-fill" style="width:'+pct+'%"></div></div>'
+        +'<div style="font-size:.7rem;color:var(--dim);margin-top:.5rem;text-align:center"><strong style="color:var(--gold)">'+remaining.toLocaleString('en-IN')+'</strong> more members needed to unlock</div>'
+      +'</div>'
+      +'<div style="display:flex;gap:.7rem;margin-top:1.2rem;flex-wrap:wrap;justify-content:center">'
+        +'<button onclick="go(\'auth\',\'up\')" class="bp" style="font-size:.82rem;padding:.6rem 1.4rem">Invite Friends & Speed Up Launch 🚀</button>'
+        +'<button onclick="ssNotify()" class="bo" style="font-size:.82rem;padding:.6rem 1.4rem">🔔 Notify Me at Launch</button>'
+      +'</div>'
+      +'<div style="margin-top:1.5rem;padding:12px;background:rgba(245,158,11,.05);border:1px solid rgba(245,158,11,.12);border-radius:12px;max-width:380px;text-align:left">'
+        +'<div style="font-size:.75rem;font-weight:700;color:var(--gold);margin-bottom:.5rem">📈 What you\'ll get at launch:</div>'
+        +'<div style="font-size:.72rem;color:var(--sub);line-height:1.8">✅ Indian & global market intelligence<br>✅ Intraday picks & swing analysis<br>✅ Big money flow detection<br>✅ Candle psychology engine<br>✅ Risk calculator & portfolio tracker<br>✅ ₹9/week — same as Pioneer & Rupi</div>'
+      +'</div>'
+      +'<div style="margin-top:.8rem;font-size:.68rem;color:var(--dim)">⚠️ Educational only · Not SEBI registered investment advice</div>'
+      +'</div>';
+    window.ssNotify=function(){
+      lsS('ss_notify',true);
+      showToast('🔔 You\'ll be notified when StockSense launches!','#F59E0B');
+    };
+  } else {
+    body.innerHTML='<div style="background:linear-gradient(135deg,rgba(245,158,11,.1),rgba(249,115,22,.04));border:1px solid rgba(245,158,11,.22);border-radius:16px;padding:14px 16px;margin-bottom:12px"><div style="font-family:Playfair Display,serif;font-size:1rem;font-weight:900;color:var(--gold)">📈 StockSense AI — LIVE</div><div style="font-size:10px;color:var(--sub);margin-top:2px">Indian Market Intelligence · Educational · Not SEBI Registered · ₹9/week</div></div>'
+      +'<div class="panel-box"><h3>🤖 AI Stock Analyst</h3>'
+      +'<input class="mk-inp" id="ss-q" placeholder="e.g. RELIANCE ka analysis, Nifty outlook, best SIP fund...">'
+      +'<div style="margin:6px 0">'+['RELIANCE outlook?','Nifty 2025 view','HDFC Bank buy?','Best SIP fund?','Gold vs Stocks'].map(function(q){return '<span onclick="ssQ(\''+q+'\')" style="display:inline-block;padding:3px 10px;border-radius:20px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);color:var(--sub);font-size:11px;cursor:pointer;margin:2px">'+q+'</span>';}).join('')+'</div>'
+      +'<button class="run-btn" id="ss-btn" style="background:linear-gradient(135deg,#F59E0B,#D97706);color:#000" onclick="ssAnalyze()">Analyze →</button>'
+      +'<div class="ai-result" id="ss-result"></div></div>'
+      +'<div style="margin-top:8px;padding:9px;background:rgba(255,165,0,.04);border:1px solid rgba(255,165,0,.13);border-radius:8px;font-size:10px;color:var(--dim)">⚠️ <strong style="color:var(--gold)">SEBI Disclaimer:</strong> Educational analysis only. Not SEBI-registered investment advice. Consult a qualified advisor before investing.</div>';
+    window.ssQ=function(q){var el=document.getElementById('ss-q');if(el){el.value=q;ssAnalyze();}};
+    window.ssAnalyze=async function(){
+      var q=(document.getElementById('ss-q')||{}).value||'';if(!q.trim())return;
+      await toolAI('You are StockSense AI — expert Indian stock market analyst on MeriKashti.ai. User language auto-detect (Hindi/Hinglish/English). For stocks: trend, fundamentals (P/E, ROE), sector outlook, BUY/HOLD/WATCH/AVOID signal with reasoning. For MFs: fund categories only (not specific AMCs). 180-220 words. End with: "⚠️ Educational analysis — consult SEBI-registered advisor before investing."',q+'\n\nContext: Sensex ~81,234, Nifty ~24,780',document.getElementById('ss-result'),document.getElementById('ss-btn'));
+    };
+  }
+}
+
+// ── CHAT (Meri Kashti AI) ──────────────────────────────────────
+chatHistory=lsG('mk_chat',[]);
+function saveCH(){lsS('mk_chat',chatHistory.slice(-50));}
+
+window.openChat=function(){
+  document.getElementById('mk-chat-ov').classList.add('open');
+  document.getElementById('mk-ov').classList.add('open');
+  renderChat();setTimeout(function(){var ta=document.getElementById('mk-ta');if(ta)ta.focus();},300);
+};
+window.closeChat=function(){document.getElementById('mk-chat-ov').classList.remove('open');document.getElementById('mk-ov').classList.remove('open');};
+window.qChat=function(p){openChat();setTimeout(function(){mkSendText(p);},350);};
+
+function renderChat(){
+  var msgs=document.getElementById('mk-chat-msgs');if(!msgs)return;
+  var u=getUser(),av=u&&u.name?u.name.charAt(0).toUpperCase():'C';
+  if(!chatHistory.length){msgs.innerHTML='<div style="text-align:center;padding:24px;color:rgba(240,244,255,.28);font-size:12.5px"><div style="font-size:2.5rem;margin-bottom:8px">🦜</div>Meri Kashti AI se kuch bhi poochho!</div>';return;}
+  var h='';
+  chatHistory.forEach(function(m){
+    if(m.role==='user'){h+='<div class="mk-row usr"><div class="mk-av usr">'+av+'</div><div class="mk-bub usr">'+escH(m.content)+'</div></div>';}
+    else{h+='<div class="mk-row"><div class="mk-av ai">🦜</div><div class="mk-bub ai">'+escH(m.content)+'</div></div>';}
+  });
+  msgs.innerHTML=h;msgs.scrollTop=msgs.scrollHeight;
+}
+
+async function mkSendText(txt){
+  if(!txt)return;
+  if(isHealthQ(txt)&&hUsed()>=H_LIMIT){
+    openChat();
+    var msgs2=document.getElementById('mk-chat-msgs');
+    var u2=getUser(),av2=u2&&u2.name?u2.name.charAt(0).toUpperCase():'C';
+    if(msgs2){var empty=msgs2.querySelector('div[style*="text-align:center"]');if(empty)msgs2.innerHTML='';}
+    if(msgs2){var ar2=document.createElement('div');ar2.className='mk-row usr';ar2.innerHTML='<div class="mk-av usr">'+av2+'</div><div class="mk-bub usr">'+escH(txt)+'</div>';msgs2.appendChild(ar2);var lm2=document.createElement('div');lm2.className='mk-row';lm2.innerHTML='<div class="mk-av ai">🦜</div><div class="mk-bub ai" style="background:rgba(244,63,94,.07);border-color:rgba(244,63,94,.2);color:#f87171">⏳ <strong>Health limit reached (9/9)</strong><br>Kal midnight ko reset hoga. 🌙</div>';msgs2.appendChild(lm2);msgs2.scrollTop=msgs2.scrollHeight;}
+    return;
+  }
+  if(isHealthQ(txt)){hInc();updateHBar();}
+  chatHistory.push({role:'user',content:txt});saveCH();
+  var msgs=document.getElementById('mk-chat-msgs');if(!msgs)return;
+  var u=getUser(),av=u&&u.name?u.name.charAt(0).toUpperCase():'C';
+  var empty=msgs.querySelector('div[style*="text-align:center"]');if(empty)msgs.innerHTML='';
+  var ur=document.createElement('div');ur.className='mk-row usr';ur.innerHTML='<div class="mk-av usr">'+av+'</div><div class="mk-bub usr">'+escH(txt)+'</div>';msgs.appendChild(ur);
+  var ty=document.createElement('div');ty.className='mk-row';ty.innerHTML='<div class="mk-av ai">🦜</div><div class="mk-dots"><span></span><span></span><span></span></div>';msgs.appendChild(ty);msgs.scrollTop=msgs.scrollHeight;
+  var sd=document.getElementById('mk-send');if(sd)sd.disabled=true;
+  try{
+    var res=await fetch('/.netlify/functions/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:chatHistory.slice(-18),system_override:getMKSys()})});
+    var d=await res.json();
+    ty.remove();
+    if(!res.ok){
+      var em=(d&&d.error&&(d.error.message||d.error))||'Server error';
+      var ee=document.createElement('div');ee.className='mk-row';ee.innerHTML='<div class="mk-av ai">🦜</div><div class="mk-bub ai" style="background:rgba(239,68,68,.08);color:#f87171">⚠️ '+escH(''+em)+'</div>';msgs.appendChild(ee);chatHistory.pop();
+    } else {
+      var reply=d.content&&d.content[0]?d.content[0].text:'';
+      if(reply){
+        chatHistory.push({role:'assistant',content:reply});saveCH();
+        var ar=document.createElement('div');ar.className='mk-row';ar.innerHTML='<div class="mk-av ai">🦜</div><div class="mk-bub ai">'+escH(reply)+'</div>';msgs.appendChild(ar);
+      }
+    }
+  }catch(e){ty.remove();var em=document.createElement('div');em.className='mk-row';em.innerHTML='<div class="mk-av ai">🦜</div><div class="mk-bub ai" style="background:rgba(239,68,68,.08);color:#f87171">⚠️ Connection error. Check internet / Netlify function.</div>';msgs.appendChild(em);chatHistory.pop();}
+  msgs.scrollTop=msgs.scrollHeight;if(sd)sd.disabled=false;
+}
+
+window.mkSend=function(){var ta=document.getElementById('mk-ta'),txt=ta?ta.value.trim():'';if(!txt)return;if(ta){ta.value='';ta.style.height='auto';}mkSendText(txt);};
+document.addEventListener('DOMContentLoaded',function(){
+  var chatTa=document.getElementById('mk-ta');
+  if(chatTa){
+    chatTa.addEventListener('input',function(){this.style.height='auto';this.style.height=Math.min(this.scrollHeight,100)+'px';});
+    chatTa.addEventListener('keydown',function(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();mkSend();}});
+  }
+});
+
+// ── FEEDBACK ─────────────────────────────────────────────────
+var fbLabels={1:'😞 Poor',2:'😐 Fair',3:'🙂 Good',4:'😊 Great',5:'🤩 Excellent!'};
+window.openFeedback=function(){
+  var m=document.getElementById('mk-fb-modal');if(m)m.classList.add('open');
+  fbR=0;fbC='';
+  var stars=document.getElementById('fb-stars');if(stars)Array.from(stars.children).forEach(function(s){s.textContent='☆';s.classList.remove('sel');});
+  var msg=document.getElementById('fb-msg');if(msg)msg.value='';
+  var lbl=document.getElementById('fb-rlbl');if(lbl)lbl.textContent='';
+  document.querySelectorAll('.fb-cat').forEach(function(b){b.classList.remove('on');});
+};
+window.closeFeedback=function(){var m=document.getElementById('mk-fb-modal');if(m)m.classList.remove('open');};
+window.fbRate=function(n){fbR=n;document.querySelectorAll('.fb-star').forEach(function(s,i){s.textContent=i<n?'★':'☆';s.classList.toggle('sel',i<n);});var lbl=document.getElementById('fb-rlbl');if(lbl)lbl.textContent=fbLabels[n]||'';};
+window.fbCat=function(el,cat){fbC=cat;document.querySelectorAll('.fb-cat').forEach(function(b){b.classList.remove('on');});el.classList.add('on');};
+// Paste your deployed Google Apps Script Web App URL here (Deploy → New deployment → Web app → Anyone)
+var GAS_FEEDBACK_URL = 'PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE';
+
+window.submitFB=async function(){
+  var msg=(document.getElementById('fb-msg')||{}).value||'';
+  if(!fbR){showToast('Pehle rating select karo! ⭐','#F43F5E');return;}
+  var fb={rating:fbR,category:fbC,message:msg,tool:window._curTool||'dashboard',date:new Date().toISOString()};
+  // Always keep a local backup
+  var all=lsG('mk_feedbacks',[]);all.push(fb);lsS('mk_feedbacks',all);
+  closeFeedback();
+  showToast(fbR>=4?'Thank you! 🎉':'Thank you! 💪 We\'ll improve!','#10B981');
+  // Send to Google Sheet + owner email via Apps Script
+  if(GAS_FEEDBACK_URL && GAS_FEEDBACK_URL.indexOf('https://')===0){
+    try{
+      await fetch(GAS_FEEDBACK_URL,{
+        method:'POST',
+        // 'text/plain' avoids a CORS preflight that Apps Script Web Apps can't handle
+        headers:{'Content-Type':'text/plain;charset=utf-8'},
+        body:JSON.stringify(fb)
+      });
+    }catch(e){
+      // Silent fail — feedback is already saved locally, owner can also export later
+    }
+  }
+};
+
+// ── INIT ─────────────────────────────────────────────────────
+updateSSUI();
+updateHBar();
+window.addEventListener('resize',function(){
+  var lm=document.getElementById('lookme-app');
+  if(lm)lm.style.marginLeft = window.innerWidth<=860 ? '0' : '230px';
+});
+setTimeout(function(){
+  try{
+    var u=getUser();
+    if(!u){
+      document.querySelectorAll('.scr').forEach(function(s){s.classList.remove('on');});
+      var as=document.getElementById('scr-auth');if(as)as.classList.add('on');
+      var ex=getUsers();
+      if(ex.length===0)atab('up'); else atab('in');
+      var asub=document.querySelector('.asub');
+      if(asub&&!document.getElementById('_welmsg')){
+        var msg=document.createElement('div');msg.id='_welmsg';
+        msg.style.cssText='text-align:center;font-size:.72rem;color:var(--sub);margin-bottom:.75rem;padding:8px 12px;background:rgba(245,158,11,.06);border:1px solid rgba(245,158,11,.15);border-radius:9px;line-height:1.6';
+        msg.innerHTML='🌟 <strong style="color:var(--gold)">Meri Kashti</strong> pe swagat hai!<br>Sign In ya Account banao — sab tools free mein explore karo';
+        asub.parentNode.insertBefore(msg,asub.nextSibling);
+      }
+    } else {
+      // already logged in — go straight to dashboard
+      go('dash');
+    }
+  }catch(e){}
+},100);
+setTimeout(function(){
+  var bar=document.getElementById('dpdpBar');
+  if(bar&&lsG('mk_dpdp',false))bar.style.display='none';
+},100);
+</script>
+</body>
+</html>
